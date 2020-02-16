@@ -1,0 +1,32 @@
+{
+  "name": "recipe-app-van-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-server": "webpack-dev-server --mode development --open",
+    "build-production": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stelios-Ervis-Priftis/Recipe-app-Van-Js.git"
+  },
+  "author": "DevChronicle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stelios-Ervis-Priftis/Recipe-app-Van-Js/issues"
+  },
+  "homepage": "https://github.com/Stelios-Ervis-Priftis/Recipe-app-Van-Js#readme",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "animate.css": "^3.7.2",
+    "babel-loader": "^8.0.6",
+    "live-server": "^1.2.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2"
+  }
+}
