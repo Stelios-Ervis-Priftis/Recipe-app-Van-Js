@@ -41,14 +41,27 @@ const createRecipe = () => {
         body: 'Steps',
         createdAt: timestamp,
         upDateAt: timestamp,
-        ingredients: {
-            text: 'ingredients',
-            completed: false
-        }
+        ingredients: [
+
+        ]
     })
     saveRecipes()
 }
 // Arguments: todo text
+// Return value: none
+
+// createIngredients
+const createIngredients = (id) => {
+    const recipe = recipes.find((recipe) => {
+        return recipe.id === id
+    })
+    recipe.ingredients.push({
+        text: 'ingredients',
+        completed: false
+    })
+    saveRecipes()
+}
+// Arguments: id
 // Return value: none
 
 // removeRecipe
@@ -63,6 +76,11 @@ const removeRecipe = (id) => {
 }
 // Arguments: id of todo to remove
 // Return value: none
+
+// removeIngredients
+const removeIngredients = (id) => {
+
+}
 
 // toggleRecipe
 const toggleRecipe = (id) => {
@@ -81,4 +99,4 @@ const toggleRecipe = (id) => {
 
 loadRecipes()
 // Make sure to call loadRecipe and setup the exports
-export { createRecipe, getRecipes, removeRecipe, toggleRecipe }
+export { createRecipe, createIngredients, getRecipes, removeRecipe, removeIngredients, toggleRecipe }

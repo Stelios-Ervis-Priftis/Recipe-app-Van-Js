@@ -1,0 +1,18 @@
+* {
+    font-family: monospace;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+div {
+    display: grid;
+}
+
+.container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-content: center;
+    place-items: center;
+    border: 1px solid;
+}

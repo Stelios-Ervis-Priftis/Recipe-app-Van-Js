@@ -10,7 +10,8 @@ module.exports = {
     filename: "[name]-bundle.js"
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -19,10 +20,12 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
-    }]
+      }
+    ]
   },
   devServer: {
       contentBase: path.resolve(__dirname, "public"),
+      watchContentBase: true,
       publicPath:"/dist/"
   },
   devtool: "source-map"
