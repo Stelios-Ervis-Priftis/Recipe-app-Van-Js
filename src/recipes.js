@@ -28,75 +28,89 @@ const saveRecipes = () => {
 // getRecipes
 const getRecipes = () => recipes
 // Arguments: none
-// Return value: todos array
+// Return value: recipes array
 
 // createRecipe
 const createRecipe = () => {
-    const id = uuidv4()
+    const recipeId = uuidv4()
     const timestamp = moment().valueOf()
     
     recipes.push({
-        id: id,
+        id: recipeId,
         title: 'Recipe title',
         body: 'Steps',
         createdAt: timestamp,
         upDateAt: timestamp,
-        ingredients: [
-
-        ]
+        ingredients: []
     })
     saveRecipes()
 }
-// Arguments: todo text
+// Arguments: recipe text
 // Return value: none
 
 // createIngredients
-const createIngredients = (id) => {
+const createIngredient = (id) => {
+    const ingredientId = uuidv4()
     const recipe = recipes.find((recipe) => {
         return recipe.id === id
     })
-    recipe.ingredients.push({
-        text: 'ingredients',
-        completed: false
-    })
-    saveRecipes()
+
+    if (recipe) {
+        recipe.ingredients.push({
+            id: ingredientId,
+            text: 'ingredients',
+            completed: false
+        })
+        saveRecipes()
+    } else {
+        log('Recipe not found')
+    }
 }
-// Arguments: id
+// Arguments: id of recipe for accessed to create the ingredient
 // Return value: none
 
 // removeRecipe
 const removeRecipe = (id) => {
     const recipeIndex = recipes.findIndex((recipe) => recipe.id === id)
-    log(recipeIndex)
 
     if (recipeIndex > -1) {
         recipes.splice(recipeIndex, 1)
         saveRecipes()
     }
 }
-// Arguments: id of todo to remove
+// Arguments: id of recipe to remove it
 // Return value: none
 
 // removeIngredients
-const removeIngredients = (id) => {
-    // find the id and remove the ingredient
-}
+const removeIngredient = (recipeId, ingredientId) => {
+    const recipe = recipes.find((recipe) => recipe.id === recipeId)
 
-// toggleRecipe
-const toggleRecipe = (id) => {
-    const recipe = recipes.find((recipe) => {
-        return recipe.id === id
-    })
-    log(recipe)
-
-    if (recipe) {
-        recipe.ingredients.completed = !recipe.ingredients.completed
+    const ingredientIndex = recipe.ingredients.findIndex((ingredient) => ingredient.id === ingredientId)
+    
+    if (ingredientIndex > -1) {
+        recipe.ingredients.splice(ingredientIndex, 1)
         saveRecipes()
+    } else {
+        log('Ingredient not found')
     }
 }
-// Arguments: id of todo to toggle
+// Arguments: id of recipe for accessed and id of ingredient to remove it
+// Return value: none
+
+// toggleIngredients
+const toggleIngredients = (recipeId, ingredientId) => {
+    const recipe = recipes.find((recipe) => recipe.id === recipeId)
+
+    recipe.ingredients.find((ingredient) => {
+        if (ingredient.id === ingredientId) {
+            ingredient.completed = !ingredient.completed
+            saveRecipes()
+        }
+    })
+}
+// Arguments: id of recipe for accessed and id of ingredient to toggle it
 // Return value: none
 
 loadRecipes()
 // Make sure to call loadRecipe and setup the exports
-export { createRecipe, createIngredients, getRecipes, removeRecipe, removeIngredients, toggleRecipe }
+export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients }

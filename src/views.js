@@ -6,7 +6,6 @@ const renderRecipes = () => {
     const recipesRoot = doc.querySelector('#recipes')
 
     recipes.forEach((recipe) => {
-        log(recipe)
         const recipeEl = doc.createElement('span')
         recipeEl.textContent = recipe.title
         recipesRoot.appendChild(recipeEl)
