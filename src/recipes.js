@@ -79,7 +79,7 @@ const removeRecipe = (id) => {
 
 // removeIngredients
 const removeIngredients = (id) => {
-
+    // find the id and remove the ingredient
 }
 
 // toggleRecipe
