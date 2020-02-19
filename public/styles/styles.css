@@ -2,11 +2,14 @@
     font-family: monospace;
     margin: 0px;
     padding: 0px;
+    text-decoration: none;
 }
 
 
 div {
     display: grid;
+    margin: 1rem;
+    border: 1px solid;
 }
 
 .container {
@@ -14,5 +17,4 @@ div {
     grid-template-rows: 1fr;
     place-content: center;
     place-items: center;
-    border: 1px solid;
 }

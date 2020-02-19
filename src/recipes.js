@@ -37,8 +37,8 @@ const createRecipe = () => {
     
     recipes.push({
         id: recipeId,
-        title: 'Recipe title',
-        body: 'Steps',
+        title: '',
+        body: '',
         createdAt: timestamp,
         upDateAt: timestamp,
         ingredients: []
