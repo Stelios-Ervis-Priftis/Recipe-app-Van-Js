@@ -38,6 +38,7 @@ const createRecipe = () => {
     recipes.push({
         id: recipeId,
         title: '',
+        subTitle: '',
         body: '',
         createdAt: timestamp,
         upDateAt: timestamp,
@@ -45,7 +46,7 @@ const createRecipe = () => {
     })
     saveRecipes()
 }
-// Arguments: recipe text
+// Arguments: none
 // Return value: none
 
 // createIngredients
