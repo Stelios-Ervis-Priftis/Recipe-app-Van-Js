@@ -112,6 +112,30 @@ const toggleIngredients = (recipeId, ingredientId) => {
 // Arguments: id of recipe for accessed and id of ingredient to toggle it
 // Return value: none
 
+const upDateRecipe = (id, updates) => {
+    const recipe = recipes.find((recipe) => recipe.id === id)
+
+    if (!recipe) {
+        return
+    }
+
+    if (typeof updates.title === 'string') {
+        recipe.title = updates.title
+    }
+
+    if (typeof updates.subTitle === 'string') {
+        recipe.subTitle = updates.subTitle
+    }
+
+    if (typeof updates.body === 'string') {
+        recipe.body = updates.body
+    }
+
+    saveRecipes()
+
+    return recipe
+}
+
 loadRecipes()
 // Make sure to call loadRecipe and setup the exports
-export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients }
+export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients, upDateRecipe }

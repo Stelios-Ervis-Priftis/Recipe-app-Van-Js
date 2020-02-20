@@ -1,9 +1,11 @@
 import { log, doc } from './helpers'
-import { createRecipe, createIngredient, getRecipes, removeRecipe, toggleIngredients, removeIngredient } from './recipes'
+import { createRecipe, createIngredient, getRecipes, removeRecipe, toggleIngredients, removeIngredient, upDateRecipe } from './recipes'
 import { generateRecipeDom, renderRecipes } from './views'
 import { setFilters } from './filters'
 
-// createRecipe()
+// upDateRecipe('f37907cf-3a43-45e2-8e08-7bbb5cfc6fc7', {
+//     title: 'New title'
+// })
 renderRecipes()
 log(getRecipes())
 
