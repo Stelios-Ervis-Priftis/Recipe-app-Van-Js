@@ -1,3 +1,5 @@
+import { log } from "./helpers"
+
 const filters = {
     searchText: ''
 }
@@ -6,7 +8,7 @@ const getFilters = () => filters
 
 const setFilters = (updates) => {
     if (typeof updates.searchText === 'string') {
-        filters.searchText === updates.searchText
+        filters.searchText = updates.searchText
     }
 }
 

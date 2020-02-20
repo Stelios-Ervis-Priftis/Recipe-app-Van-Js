@@ -1,5 +1,6 @@
 import { log, doc } from './helpers'
 import { getRecipes } from './recipes'
+import { getFilters } from './filters'
 
 // generateRecipeDOM
 // Get the DOM elements for an individual recipe
@@ -29,13 +30,21 @@ const generateRecipeDom = (recipe) => {
 const renderRecipes = () => {
     const recipesEl = doc.querySelector('#recipes')
     const recipes = getRecipes()
+    const filters = getFilters()
+    const filteredRecipes = recipes.filter((recipe) => recipe.title.toLowerCase().includes(filters.searchText.toLowerCase()) || recipe.subTitle.toLowerCase().includes(filters.searchText.toLowerCase()))
 
     recipesEl.innerHTML = ''
 
-    recipes.forEach((recipe) => {
-        const recipeTitle = generateRecipeDom(recipe)
-        recipesEl.appendChild(recipeTitle)
-    })
+    if (filteredRecipes.length > 0) {
+        filteredRecipes.forEach((recipe) => {
+            const recipeTitle = generateRecipeDom(recipe)
+            recipesEl.appendChild(recipeTitle)
+        })
+    } else {
+        const emptyMessage = document.createElement('p')
+        emptyMessage.textContent = 'No recipe available.'
+        recipesEl.appendChild(emptyMessage)
+    }
 }
 // Arguments: none
 // Return value: none
