@@ -30,6 +30,8 @@ const renderRecipes = () => {
     const recipesEl = doc.querySelector('#recipes')
     const recipes = getRecipes()
 
+    recipesEl.innerHTML = ''
+
     recipes.forEach((recipe) => {
         const recipeTitle = generateRecipeDom(recipe)
         recipesEl.appendChild(recipeTitle)

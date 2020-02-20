@@ -5,3 +5,8 @@ import { generateRecipeDom, renderRecipes } from './views'
 // createRecipe()
 renderRecipes()
 log(getRecipes())
+
+doc.querySelector('#create-recipe').addEventListener('click', (e) => {
+    createRecipe()
+    renderRecipes()
+})
