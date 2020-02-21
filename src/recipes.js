@@ -45,9 +45,11 @@ const createRecipe = () => {
         ingredients: []
     })
     saveRecipes()
+
+    return recipeId
 }
 // Arguments: none
-// Return value: none
+// Return value: recipeId
 
 // createIngredients
 const createIngredient = (id) => {
