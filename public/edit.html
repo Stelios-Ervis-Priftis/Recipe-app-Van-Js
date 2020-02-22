@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Edit Page</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> -->
 </head>
 <body>
-    <h1>Recipe Edit</h1>
+    <div class="container">
+        <h1>Recipe Edit</h1>
+        <input id="recipe-title" placeholder="Add recipe title"/>
+        <input id="recipe-sub-title" placeholder="Add recipe sub title"/>
+        <textarea id="recipe-body" class="textarea" placeholder="Enter your recipe steps (Step 1, Step 2, Step 3)"></textarea>
+    </div>
     <script src="dist/edit-bundle.js"></script>
 </body>
 </html>

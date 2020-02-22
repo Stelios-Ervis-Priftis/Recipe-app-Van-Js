@@ -49,6 +49,23 @@ const renderRecipes = () => {
 // Arguments: none
 // Return value: none
 
+const initializeEditPage = (recipeId) => {
+    const recTitleEl = doc.querySelector('#recipe-title')
+    const recSubTitleEl = doc.querySelector('#recipe-sub-title')
+    const recBody = doc.querySelector('#recipe-body')
+
+    const recipes = getRecipes()
+    const recipe = recipes.find((recipe) => recipe.id === recipeId)
+
+    if (!recipe) {
+        location.assign('./index.html')
+    }
+
+    recTitleEl.value = recipe.title
+    recSubTitleEl.value = recipe.subTitle
+    recBody.value = recipe.body
+}
+
 
 const generateSummaryDom = () => {
     const statusEl = doc.createElement('p')
@@ -58,4 +75,4 @@ const generateSummaryDom = () => {
 // Arguments: incompletedTodos
 // Return value: the summary
 
-export { generateRecipeDom, renderRecipes, generateSummaryDom }
+export { generateRecipeDom, renderRecipes, initializeEditPage, generateSummaryDom }

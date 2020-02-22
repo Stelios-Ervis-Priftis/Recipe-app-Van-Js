@@ -1,8 +1,7 @@
 import { log, doc } from './helpers'
-import { createRecipe } from './recipes'
+import { createRecipe, getRecipes } from './recipes'
 import { renderRecipes } from './views'
 import { setFilters } from './filters'
-import { locales } from 'moment'
 
 renderRecipes()
 
@@ -17,3 +16,5 @@ doc.querySelector('#search-text').addEventListener('input', (e) => {
     })
     renderRecipes()
 })
+
+log(getRecipes())
