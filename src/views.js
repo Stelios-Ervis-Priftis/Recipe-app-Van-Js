@@ -1,5 +1,5 @@
 import { log, doc } from './helpers'
-import { getRecipes } from './recipes'
+import { getRecipes, toggleIngredients, removeIngredient } from './recipes'
 import { getFilters } from './filters'
 
 // generateRecipeDOM
@@ -49,6 +49,56 @@ const renderRecipes = () => {
 // Arguments: none
 // Return value: none
 
+const generateIngredientsDom = (recipeId, ingredient) => {
+    const ingredientRoot = doc.createElement('div')
+    const ingredientCheckbox = doc.createElement('input')
+    const ingredientText = doc.createElement('span')
+    const removeButton = doc.createElement('button')
+
+    // actions
+    removeButton.addEventListener('click', (e) => {
+        removeIngredient(recipeId, ingredient.id)
+        renderIngredients()
+    })
+
+    // setup text content and attributes 
+    ingredientCheckbox.setAttribute('type', 'checkbox')
+    removeButton.textContent = 'x'
+    ingredientText.textContent = ingredient.text
+
+    // append the elements
+    ingredientRoot.appendChild(ingredientCheckbox)
+    ingredientRoot.appendChild(ingredientText)
+    ingredientRoot.appendChild(removeButton)
+
+    return ingredientRoot
+}
+
+const renderIngredients = (recipeId) => {
+    const ingredientsEl = doc.querySelector('#ingredients')
+    const recipes = getRecipes()
+    const recipe = recipes.find((recipe) => recipe.id === recipeId)
+
+    ingredientsEl.innerHTML = ''
+
+    if (recipe.ingredients.length > 0) {
+        recipe.ingredients.forEach((ingredient) => {
+            ingredientsEl.appendChild(generateIngredientsDom(recipeId, ingredient))
+            log(recipeId)
+            log(ingredient.id)
+        })
+    } else {
+        const emptyMessage = document.createElement('p')
+        emptyMessage.textContent = 'No ingrendients available.'
+        ingredientsEl.appendChild(emptyMessage)
+    }
+    // recipes.ingredients.forEach((recipe) => {
+
+    // })
+    // generateIngredientsDom(recipe)
+    
+}
+
 const initializeEditPage = (recipeId) => {
     const recTitleEl = doc.querySelector('#recipe-title')
     const recSubTitleEl = doc.querySelector('#recipe-sub-title')
@@ -75,4 +125,4 @@ const generateSummaryDom = () => {
 // Arguments: incompletedTodos
 // Return value: the summary
 
-export { generateRecipeDom, renderRecipes, initializeEditPage, generateSummaryDom }
+export { generateRecipeDom, renderRecipes, renderIngredients, initializeEditPage, generateSummaryDom }
