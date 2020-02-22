@@ -9,10 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Recipe Edit</h1>
-        <input id="recipe-title" placeholder="Add recipe title"/>
-        <input id="recipe-sub-title" placeholder="Add recipe sub title"/>
-        <textarea id="recipe-body" class="textarea" placeholder="Enter your recipe steps (Step 1, Step 2, Step 3)"></textarea>
+        <div class="header">
+            <h1>Recipe Edit</h1>
+        </div>
+        <div class="actions">
+            <input id="recipe-title" placeholder="Add recipe title" />
+            <input id="recipe-sub-title" placeholder="Add recipe sub title" />
+            <textarea id="recipe-body" class="textarea" placeholder="Enter your recipe steps"></textarea>
+        </div>
+        <div id="ingredients"></div>
+        <div class="detele">
+            <button id="delete-recipe">Delete recipe</button>
+        </div>
     </div>
     <script src="dist/edit-bundle.js"></script>
 </body>

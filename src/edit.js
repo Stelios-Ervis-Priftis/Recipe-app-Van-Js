@@ -1,10 +1,11 @@
 import { log, doc } from './helpers'
 import { initializeEditPage } from './views'
-import { upDateRecipe, loadRecipes } from './recipes'
+import { upDateRecipe, loadRecipes, removeRecipe } from './recipes'
 
 const recTitleEl = doc.querySelector('#recipe-title')
 const recSubTitleEl = doc.querySelector('#recipe-sub-title')
 const recBody = doc.querySelector('#recipe-body')
+const recDelete = doc.querySelector('#delete-recipe')
 const recipeId = location.hash.substring(1)
 
 initializeEditPage(recipeId)
@@ -27,6 +28,12 @@ recBody.addEventListener('input', (e) => {
         body: e.target.value
     })
 })
+
+recDelete.addEventListener('click', (e) => {
+    removeRecipe(recipeId)
+    location.assign('./index.html')
+})
+
 
 window.addEventListener('storage', (e) => {
     if (e.key === 'recipes') {
