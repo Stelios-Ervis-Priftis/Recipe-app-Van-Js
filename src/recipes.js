@@ -140,4 +140,4 @@ const upDateRecipe = (id, updates) => {
 
 loadRecipes()
 // Make sure to call loadRecipe and setup the exports
-export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients, upDateRecipe }
+export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients, upDateRecipe, loadRecipes }

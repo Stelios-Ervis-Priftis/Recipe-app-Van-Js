@@ -1,6 +1,6 @@
 import { log, doc } from './helpers'
 import { initializeEditPage } from './views'
-import { upDateRecipe } from './recipes'
+import { upDateRecipe, loadRecipes } from './recipes'
 
 const recTitleEl = doc.querySelector('#recipe-title')
 const recSubTitleEl = doc.querySelector('#recipe-sub-title')
@@ -30,6 +30,7 @@ recBody.addEventListener('input', (e) => {
 
 window.addEventListener('storage', (e) => {
     if (e.key === 'recipes') {
-        log(e.key)
+        loadRecipes()
+        initializeEditPage(recipeId)
     }
 })

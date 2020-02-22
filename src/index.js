@@ -1,5 +1,5 @@
 import { log, doc } from './helpers'
-import { createRecipe, getRecipes } from './recipes'
+import { createRecipe, getRecipes, loadRecipes } from './recipes'
 import { renderRecipes } from './views'
 import { setFilters } from './filters'
 
@@ -15,6 +15,13 @@ doc.querySelector('#search-text').addEventListener('input', (e) => {
         searchText: e.target.value.trim()
     })
     renderRecipes()
+})
+
+window.addEventListener('storage', (e) => {
+    if (e.key === 'recipes') {
+        loadRecipes()
+        renderRecipes()
+    }
 })
 
 log(getRecipes())
