@@ -58,7 +58,7 @@ const generateIngredientsDom = (recipeId, ingredient) => {
     // actions
     removeButton.addEventListener('click', (e) => {
         removeIngredient(recipeId, ingredient.id)
-        renderIngredients()
+        renderIngredients(recipeId)
     })
 
     // setup text content and attributes 
@@ -84,8 +84,6 @@ const renderIngredients = (recipeId) => {
     if (recipe.ingredients.length > 0) {
         recipe.ingredients.forEach((ingredient) => {
             ingredientsEl.appendChild(generateIngredientsDom(recipeId, ingredient))
-            log(recipeId)
-            log(ingredient.id)
         })
     } else {
         const emptyMessage = document.createElement('p')
@@ -115,7 +113,6 @@ const initializeEditPage = (recipeId) => {
     recSubTitleEl.value = recipe.subTitle
     recBody.value = recipe.body
 }
-
 
 const generateSummaryDom = () => {
     const statusEl = doc.createElement('p')

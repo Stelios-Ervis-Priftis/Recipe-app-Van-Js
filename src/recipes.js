@@ -85,9 +85,21 @@ const removeRecipe = (id) => {
 // Return value: none
 
 // removeIngredients
+// const removeIngredient = (recipeId, ingredientId) => {
+//     const recipe = recipes.find((recipe) => recipe.id === recipeId)
+
+//     const ingredientIndex = recipe.ingredients.findIndex((ingredient) => ingredient.id === ingredientId)
+    
+//     if (ingredientIndex > -1) {
+//         recipe.ingredients.splice(ingredientIndex, 1)
+//         saveRecipes()
+//     } else {
+//         log('Ingredient not found')
+//     }
+// }
 const removeIngredient = (recipeId, ingredientId) => {
     const recipe = recipes.find((recipe) => recipe.id === recipeId)
-
+    
     const ingredientIndex = recipe.ingredients.findIndex((ingredient) => ingredient.id === ingredientId)
     
     if (ingredientIndex > -1) {
