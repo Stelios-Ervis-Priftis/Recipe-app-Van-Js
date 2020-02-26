@@ -9,7 +9,7 @@ const generateRecipeDom = (recipe) => {
     const recipeEl = doc.createElement('a')
     const textEl = doc.createElement('p')
 
-    if (recipe.title.length ) {
+    if (recipe.title.length > 0) {
         textEl.textContent = recipe.title
     } else {
         textEl.textContent = 'Unnamed Recipe'
