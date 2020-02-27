@@ -7,6 +7,7 @@ const recTitleEl = doc.querySelector('#recipe-title')
 const recSubTitleEl = doc.querySelector('#recipe-sub-title')
 const recBody = doc.querySelector('#recipe-body')
 const recDelete = doc.querySelector('#delete-recipe')
+const recHomePage = doc.querySelector('#return')
 const recipeId = location.hash.substring(1)
 
 initializeEditPage(recipeId)
@@ -35,8 +36,9 @@ recDelete.addEventListener('click', (e) => {
     location.assign('./index.html')
 })
 
-
-
+recHomePage.addEventListener('click', (e) => {
+    location.assign(`/index.html`)
+})
 
 window.addEventListener('storage', (e) => {
     if (e.key === 'recipes') {
