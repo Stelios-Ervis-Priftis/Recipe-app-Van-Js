@@ -51,6 +51,18 @@ const createRecipe = () => {
 // Arguments: none
 // Return value: recipeId
 
+// removeRecipe
+const removeRecipe = (id) => {
+    const recipeIndex = recipes.findIndex((recipe) => recipe.id === id)
+
+    if (recipeIndex > -1) {
+        recipes.splice(recipeIndex, 1)
+        saveRecipes()
+    }
+}
+// Arguments: id of recipe to remove it
+// Return value: none
+
 // createIngredients
 const createIngredient = (id) => {
     const ingredientId = uuidv4()
@@ -72,31 +84,6 @@ const createIngredient = (id) => {
 // Arguments: id of recipe for accessed to create the ingredient
 // Return value: none
 
-// removeRecipe
-const removeRecipe = (id) => {
-    const recipeIndex = recipes.findIndex((recipe) => recipe.id === id)
-
-    if (recipeIndex > -1) {
-        recipes.splice(recipeIndex, 1)
-        saveRecipes()
-    }
-}
-// Arguments: id of recipe to remove it
-// Return value: none
-
-// removeIngredients
-// const removeIngredient = (recipeId, ingredientId) => {
-//     const recipe = recipes.find((recipe) => recipe.id === recipeId)
-
-//     const ingredientIndex = recipe.ingredients.findIndex((ingredient) => ingredient.id === ingredientId)
-    
-//     if (ingredientIndex > -1) {
-//         recipe.ingredients.splice(ingredientIndex, 1)
-//         saveRecipes()
-//     } else {
-//         log('Ingredient not found')
-//     }
-// }
 const removeIngredient = (recipeId, ingredientId) => {
     const recipe = recipes.find((recipe) => recipe.id === recipeId)
     

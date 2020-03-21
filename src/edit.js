@@ -10,6 +10,8 @@ const recDelete = doc.querySelector('#delete-recipe')
 const recHomePage = doc.querySelector('#return')
 const recipeId = location.hash.substring(1)
 
+const createIngredientBtn = doc.querySelector('#add-ingredients')
+
 initializeEditPage(recipeId)
 renderIngredients(recipeId)
 
@@ -38,6 +40,13 @@ recDelete.addEventListener('click', (e) => {
 
 recHomePage.addEventListener('click', (e) => {
     location.assign(`/index.html`)
+})
+
+// Ingredients 
+createIngredientBtn.addEventListener('click', (e) => {
+    log(e.target)
+    createIngredient(recipeId)
+    renderIngredients(recipeId)
 })
 
 window.addEventListener('storage', (e) => {

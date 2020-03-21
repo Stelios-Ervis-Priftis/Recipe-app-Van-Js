@@ -60,6 +60,11 @@ const generateIngredientsDom = (recipeId, ingredient) => {
         removeIngredient(recipeId, ingredient.id)
         renderIngredients(recipeId)
     })
+    ingredientCheckbox.addEventListener('change', (e) => {
+        toggleIngredients(recipeId, ingredient.id)
+        renderIngredients(recipeId)
+    })
+    ingredientCheckbox.checked = ingredient.completed
 
     // setup text content and attributes 
     ingredientCheckbox.setAttribute('type', 'checkbox')
@@ -90,11 +95,6 @@ const renderIngredients = (recipeId) => {
         emptyMessage.textContent = 'No ingrendients available.'
         ingredientsEl.appendChild(emptyMessage)
     }
-    // recipes.ingredients.forEach((recipe) => {
-
-    // })
-    // generateIngredientsDom(recipe)
-    
 }
 
 const initializeEditPage = (recipeId) => {
