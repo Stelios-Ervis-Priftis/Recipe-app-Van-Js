@@ -64,21 +64,22 @@ const removeRecipe = (id) => {
 // Return value: none
 
 // createIngredients
-const createIngredient = (id) => {
+const createIngredient = (id, e) => {
     const ingredientId = uuidv4()
     const recipe = recipes.find((recipe) => {
         return recipe.id === id
     })
+    const newIngedient = e.target.elements.newIngredient.value.trim()
 
-    if (recipe) {
+    if (recipe && newIngedient.length > 0) {
         recipe.ingredients.push({
             id: ingredientId,
-            text: 'ingredients',
+            text: newIngedient,
             completed: false
         })
         saveRecipes()
     } else {
-        log('Recipe not found')
+        log('Recipe not found or You need to add character to input')
     }
 }
 // Arguments: id of recipe for accessed to create the ingredient

@@ -43,9 +43,9 @@ recHomePage.addEventListener('click', (e) => {
 })
 
 // Ingredients 
-createIngredientBtn.addEventListener('click', (e) => {
-    log(e.target)
-    createIngredient(recipeId)
+createIngredientBtn.addEventListener('submit', (e) => {
+    e.preventDefault()
+    createIngredient(recipeId, e)
     renderIngredients(recipeId)
 })
 
