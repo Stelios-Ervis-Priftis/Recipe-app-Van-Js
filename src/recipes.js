@@ -69,14 +69,15 @@ const createIngredient = (id, e) => {
     const recipe = recipes.find((recipe) => {
         return recipe.id === id
     })
-    const newIngedient = e.target.elements.newIngredient.value.trim()
+    let newIngredient = e.target.elements.newIngredient.value.trim()
 
-    if (recipe && newIngedient.length > 0) {
+    if (recipe && newIngredient.length > 0) {
         recipe.ingredients.push({
             id: ingredientId,
-            text: newIngedient,
+            text: newIngredient,
             completed: false
         })
+        e.target.elements.newIngredient.value = ''
         saveRecipes()
     } else {
         log('Recipe not found or You need to add character to input')
