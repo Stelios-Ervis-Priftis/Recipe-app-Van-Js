@@ -78,9 +78,10 @@ const createIngredient = (id, e) => {
             completed: false
         })
         e.target.elements.newIngredient.value = ''
+        e.target.elements.newIngredient.removeAttribute('class', 'error')
         saveRecipes()
     } else {
-        log('Recipe not found or You need to add character to input')
+        e.target.elements.newIngredient.setAttribute('class', 'error')
     }
 }
 // Arguments: id of recipe for accessed to create the ingredient
