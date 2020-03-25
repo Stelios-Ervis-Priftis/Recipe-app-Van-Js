@@ -13,19 +13,24 @@ div {
     border: 1px solid;
 }
 
+input {
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 5px;
+}
+
+textarea {
+    -moz-outline-style: none;
+    resize: none;
+}
+
 .container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     place-content: center;
     place-items: center;
-}
-
-input {
-    border: 1px solid black;
-    border-radius: 0.2rem;
-    padding: 1rem;
-    font-size: 1rem;
-    margin: 5px;
 }
 
 .error {

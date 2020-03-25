@@ -1,6 +1,6 @@
 import moment from 'moment'
 import uuidv4 from'uuid/v4'
-import { log } from './helpers'
+import { log, animateCSS } from './helpers'
 
 // Setup the empty recipes array
 let recipes = []
@@ -70,6 +70,7 @@ const createIngredient = (id, e) => {
         return recipe.id === id
     })
     let newIngredient = e.target.elements.newIngredient.value.trim()
+    let ingredientEl = e.target.elements.newIngredient
 
     if (recipe && newIngredient.length > 0) {
         recipe.ingredients.push({
@@ -82,6 +83,7 @@ const createIngredient = (id, e) => {
         saveRecipes()
     } else {
         e.target.elements.newIngredient.setAttribute('class', 'error')
+        animateCSS(ingredientEl, 'shake', 'faster')
     }
 }
 // Arguments: id of recipe for accessed to create the ingredient
