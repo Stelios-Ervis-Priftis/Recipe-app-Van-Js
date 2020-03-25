@@ -3,8 +3,12 @@
     margin: 0px;
     padding: 0px;
     text-decoration: none;
+    color: white;
 }
 
+body {
+    background-color: steelblue;
+}
 
 div {
     display: grid;
@@ -18,12 +22,16 @@ input {
     padding: 0.5rem;
     font-size: 1rem;
     margin: 5px;
+    background-color: white;
+    color: black
 }
 
 textarea {
     border: 1px solid black;
     border-radius: 0.2rem;
     resize: none;
+    background-color: white;
+    color: black
 }
 
 .container {
@@ -31,6 +39,52 @@ textarea {
     grid-template-rows: 1fr;
     place-content: center;
     place-items: center;
+}
+
+.btn {
+    background-color: #1d9d1d;
+    padding: 0.4rem;
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    color: #127912;
+    border-color: currentColor;
+    background-color: white;
+}
+
+.btn:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+
+.btn-danger {
+    background-color: firebrick;
+    padding: 0.4rem;
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+}
+
+.btn-danger:hover {
+    color: firebrick;
+    border-color: currentColor;
+    background-color: white;
+    /* box-shadow: 0 0 0 1px firebrick,
+    0 0 0 1px firebrick; */
+}
+
+.recipe {
+    border: 1px solid;
+    border-radius: 0.3rem;
+}
+
+.recipe:hover {
+    color: white;
+    border-color: currentColor;
+    background-color: #1c5a8e;
 }
 
 .error {
