@@ -23,5 +23,3 @@ window.addEventListener('storage', (e) => {
         renderRecipes()
     }
 })
-
-log(getRecipes())

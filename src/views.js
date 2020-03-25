@@ -15,9 +15,10 @@ const generateRecipeDom = (recipe) => {
         textEl.textContent = 'Unnamed Recipe'
     }
     recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
+    recipeRoot.setAttribute('class', 'recipe')
 
     recipeEl.appendChild(textEl)
-    recipeEl.appendChild(generateSummaryDom())
+    recipeEl.appendChild(ingredientsStockMessage(recipe))
     recipeRoot.appendChild(recipeEl)
 
     return recipeRoot
@@ -32,6 +33,10 @@ const renderRecipes = () => {
     const recipes = getRecipes()
     const filters = getFilters()
     const filteredRecipes = recipes.filter((recipe) => recipe.title.toLowerCase().includes(filters.searchText.toLowerCase()) || recipe.subTitle.toLowerCase().includes(filters.searchText.toLowerCase()))
+
+    // filteredRecipes.forEach(recipe => {
+    //     log(recipe.ingredients)
+    // })
 
     recipesEl.innerHTML = ''
 
@@ -114,12 +119,22 @@ const initializeEditPage = (recipeId) => {
     recBody.value = recipe.body
 }
 
-const generateSummaryDom = () => {
+const ingredientsStockMessage = (recipe) => {
     const statusEl = doc.createElement('p')
-    statusEl.textContent = `Structure if all the ingredients exit`
+    const totalIngredients = recipe.ingredients.length
+    const ingredientInStock = recipe.ingredients.filter((ingredient) => ingredient.completed)
+
+    if (ingredientInStock.length === totalIngredients && totalIngredients !== 0) {
+        statusEl.textContent = `You have all the ingredients, ready to make it!`
+    } else if (ingredientInStock.length > 0) {
+        statusEl.textContent = `You have some of the ingredients, check out what you miss.`
+    } else if (totalIngredients > 0) {
+        statusEl.textContent = `You have add ingredients but you don't posses them yet.`
+    } else if (totalIngredients === 0) {
+        statusEl.textContent = `You haven't add any ingredients yet.`
+    }
+
     return statusEl
 }
-// Arguments: incompletedTodos
-// Return value: the summary
 
-export { generateRecipeDom, renderRecipes, renderIngredients, initializeEditPage, generateSummaryDom }
+export { generateRecipeDom, renderRecipes, renderIngredients, initializeEditPage }

@@ -1,5 +1,8 @@
 # Recipe-app-Van-Js
 
+# Install modules
+    <!-- npm i or npm install -->
+
 # Start the project
     <!-- npm run dev-server -->
 
@@ -8,4 +11,4 @@
 
 # Deploy Project
     <!-- Surge -->
-    <!-- /Users/DevChronicle/Desktop/Dev-Chronicle-Projects/Recipe-app-Van-Js/public -->
+    <!-- Recipe-app-Van-Js/public -->
