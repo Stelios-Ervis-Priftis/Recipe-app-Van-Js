@@ -13,17 +13,7 @@ body {
 div {
     display: grid;
     margin: 1rem;
-    padding: 1rem;
-}
-
-input {
-    border: 1px solid black;
-    border-radius: 0.2rem;
     padding: 0.5rem;
-    font-size: 1rem;
-    margin: 5px;
-    background-color: white;
-    color: black
 }
 
 textarea {
@@ -39,6 +29,15 @@ textarea {
     grid-template-rows: 1fr;
     place-content: center;
     place-items: center;
+}
+
+.header {
+    font-size: 4rem;
+    text-decoration: underline midnightblue;
+}
+
+.btn-act-ctr {
+    display: inline;
 }
 
 .btn {
@@ -58,6 +57,16 @@ textarea {
 .btn:active {
     transform: translateY(1px);
     filter: saturate(150%);
+}
+
+.rec-flt-inp {
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    font-size: 1rem;
+    margin: 5px;
+    background-color: white;
+    color: black;
 }
 
 .btn-danger {
@@ -82,9 +91,24 @@ textarea {
 }
 
 .recipe:hover {
-    color: white;
+    color: midnightblue;
     border-color: currentColor;
-    background-color: #1c5a8e;
+    background-color: white;
+}
+
+.recipe, a, p {
+    margin: 0.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    color: inherit;
+    border-color: currentColor;
+    background-color: inherit;
+}
+
+.rec-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .error {

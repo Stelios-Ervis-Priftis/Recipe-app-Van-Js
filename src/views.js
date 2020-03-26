@@ -16,6 +16,7 @@ const generateRecipeDom = (recipe) => {
     }
     recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
     recipeRoot.setAttribute('class', 'recipe')
+    textEl.setAttribute('class', 'rec-title')
 
     recipeEl.appendChild(textEl)
     recipeEl.appendChild(ingredientsStockMessage(recipe))
