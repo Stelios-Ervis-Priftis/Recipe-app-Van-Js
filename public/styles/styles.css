@@ -46,6 +46,7 @@ textarea {
     border: 1px solid white;
     border-radius: 0.2rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -67,6 +68,15 @@ textarea {
     margin: 5px;
     background-color: white;
     color: black;
+}
+
+.fas {
+    font-weight: 900;
+    font-size: small;
+    color: midnightblue;
+    position: absolute;
+    margin-left: -25px;
+    margin-top: 10px;
 }
 
 .btn-danger {
