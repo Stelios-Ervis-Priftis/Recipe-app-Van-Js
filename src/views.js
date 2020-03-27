@@ -49,6 +49,7 @@ const renderRecipes = () => {
     } else {
         const emptyMessage = document.createElement('p')
         emptyMessage.textContent = 'No recipe available.'
+        emptyMessage.setAttribute('class', 'empty-message')
         recipesEl.appendChild(emptyMessage)
     }
 }

@@ -1,58 +1,67 @@
 * {
     font-family: monospace;
+    text-decoration: none;
     margin: 0px;
     padding: 0px;
-    text-decoration: none;
-    color: white;
+}
+
+html {
+    height: 100%;
 }
 
 body {
+    color: white;
     background-color: steelblue;
 }
 
 div {
     display: grid;
-    margin: 1rem;
-    padding: 0.5rem;
+    /* margin: 1rem;
+    padding: 0.5rem; */
 }
 
 textarea {
+    color: black;
+    background-color: white;
+    resize: none;
     border: 1px solid black;
     border-radius: 0.2rem;
-    resize: none;
-    background-color: white;
-    color: black
 }
 
 .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     place-content: center;
     place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 3rem;
+    margin: 1rem;
 }
 
 .header {
-    font-size: 4rem;
     text-decoration: underline midnightblue;
+    font-size: 3.5rem;
 }
 
 .btn-act-ctr {
-    display: inline;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
 }
 
 .btn {
+    cursor: pointer;
+    border: 1px solid white;
     background-color: #1d9d1d;
     padding: 0.4rem;
-    border: 1px solid white;
+    width: 13rem;
     border-radius: 0.2rem;
     font-size: 1rem;
-    cursor: pointer;
 }
 
 .btn:hover {
     color: #127912;
-    border-color: currentColor;
     background-color: white;
+    border-color: currentColor;
 }
 
 .btn:active {
@@ -61,28 +70,34 @@ textarea {
 }
 
 .rec-flt-inp {
+    color: black;
+    background-color: white;
     border: 1px solid white;
     border-radius: 0.2rem;
     padding: 0.4rem;
     font-size: 1rem;
-    margin: 5px;
-    background-color: white;
+}
+
+.dropdown {
     color: black;
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    font-size: 1rem;
 }
 
 .fas {
-    font-weight: 900;
+    color: black;
     font-size: small;
-    color: midnightblue;
     position: absolute;
-    margin-left: -25px;
-    margin-top: 10px;
+    font-weight: 900;
+    margin-left: 150px;
+    margin-top: 6px;
 }
 
 .btn-danger {
     background-color: firebrick;
-    padding: 0.4rem;
     border: 1px solid white;
+    padding: 0.4rem;
     border-radius: 0.2rem;
     font-size: 1rem;
 }
@@ -107,21 +122,26 @@ textarea {
 }
 
 .recipe, a, p {
-    margin: 0.5rem;
-    font-size: 1.3rem;
-    text-align: center;
     color: inherit;
     border-color: currentColor;
     background-color: inherit;
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 1rem;
 }
 
 .rec-title {
-    font-size: 2rem;
     font-weight: bold;
     text-decoration: underline;
+    font-size: 2rem;
 }
 
 .error {
     color: firebrick;
     border: 1px solid firebrick;
+}
+
+.empty-message {
+    font-size: 1.5rem;
+    margin-top: 10rem;
 }

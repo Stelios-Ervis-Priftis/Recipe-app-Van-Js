@@ -14,11 +14,33 @@
             <h1>Recipe App</h1>
         </div>
         <div class="btn-act-ctr">
-            <button id="create-recipe" class="btn">Create Recipe</button>
-            <input id="search-text" class="rec-flt-inp" type="text" placeholder="Search Recipe">
-            <i class="fas fa-search"></i>
+            <div>
+                <select id="filter-by" class="dropdown">
+                    <option value="byPopularity">Popularity</option>
+                    <option value="byStarterDish">Starter Dish</option>
+                    <option value="byMainDish">Main Dish</option>
+                    <option value="byDessertDish">Dessert Dish</option>
+                    <option value="byCreatedDate">Created At</option>
+                    <option value="byAlphabet">Alphabetically</option>
+                </select>
+            </div>
+            <div>
+                <button id="create-recipe" class="btn">Create Recipe</button>
+            </div>
+            <div>
+                <input id="search-text" class="rec-flt-inp" type="text" placeholder="Search Recipe">
+                <i class="fas fa-search"></i>
+            </div>
         </div>
         <div id="recipes"></div>
+    </div>
+    <div>
+        <footer class="footer">
+            <div class="footer-container">
+                <p>Created by Dev-Chronicle</p>
+                <p>Stelios Priftis</p>
+            </div>
+        </footer>
     </div>
     <script src="dist/index-bundle.js"></script>
 </body>
