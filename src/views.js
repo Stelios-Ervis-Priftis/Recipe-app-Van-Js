@@ -48,7 +48,7 @@ const renderRecipes = () => {
         })
     } else {
         const emptyMessage = document.createElement('p')
-        emptyMessage.textContent = 'No recipe available.'
+        emptyMessage.textContent = 'None recipe found.'
         emptyMessage.setAttribute('class', 'empty-message')
         recipesEl.appendChild(emptyMessage)
     }
@@ -123,6 +123,7 @@ const initializeEditPage = (recipeId) => {
 
 const ingredientsStockMessage = (recipe) => {
     const statusEl = doc.createElement('p')
+    statusEl.setAttribute('class', 'stock-message')
     const totalIngredients = recipe.ingredients.length
     const ingredientInStock = recipe.ingredients.filter((ingredient) => ingredient.completed)
 
