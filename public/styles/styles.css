@@ -56,11 +56,10 @@
     }
 
     .container {
-        /* place-content: center; */
         place-items: center;
         grid-template-columns: 1fr;
         grid-gap: 1em;
-        margin-bottom: 5em;
+        margin-bottom: 5em !important;
     }
 
     .title {
@@ -168,7 +167,7 @@
     }
 
     .stock-message {
-        font-size: 0.7em;
+        font-size: 10px;
     }
 
     /* .recipe {
