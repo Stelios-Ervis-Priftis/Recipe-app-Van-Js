@@ -59,7 +59,7 @@
         place-items: center;
         grid-template-columns: 1fr;
         grid-gap: 1em;
-        margin-bottom: 5em !important;
+        /* margin-bottom: 5em !important; */
     }
 
     .title {
