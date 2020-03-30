@@ -30,15 +30,17 @@ const generateRecipeDom = (recipe) => {
 // renderRecipes
 // Render application todos base on the filters
 const renderRecipes = () => {
+    const dropdown = doc.querySelector('#filter-by')
     const recipesEl = doc.querySelector('#recipes')
     const recipes = getRecipes()
     const filters = getFilters()
     const filteredRecipes = recipes.filter((recipe) => recipe.title.toLowerCase().includes(filters.searchText.toLowerCase()) || recipe.subTitle.toLowerCase().includes(filters.searchText.toLowerCase()))
 
-    // filteredRecipes.forEach(recipe => {
-    //     log(recipe.ingredients)
-    // })
-
+    // Sort by wich value are chosing
+    dropdown.addEventListener('change', (e) => {
+        log(e.target.value)
+    })
+    
     recipesEl.innerHTML = ''
 
     if (filteredRecipes.length > 0) {
