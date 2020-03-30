@@ -155,18 +155,20 @@
     }
 
     .recipe p {
+        color: white;
         justify-self: center;
         align-self: center;
     }
 
     .rec-title {
-        font-size: 2rem;
         font-weight: bold;
         text-decoration: underline;
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
     }
 
     .stock-message {
-        font-size: 1.3rem;
+        font-size: 0.7em;
     }
 
     /* .recipe {
