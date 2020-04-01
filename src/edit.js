@@ -1,6 +1,6 @@
 import { log, doc } from './helpers'
 import { initializeEditPage, renderIngredients } from './views'
-import { upDateRecipe, loadRecipes, removeRecipe, createIngredient, getRecipes } from './recipes'
+import { upDateRecipe, loadRecipes, removeRecipe, createIngredient } from './recipes'
 
 const recTitleEl = doc.querySelector('#recipe-title')
 const recSubTitleEl = doc.querySelector('#recipe-sub-title')
