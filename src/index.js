@@ -4,7 +4,6 @@ import { renderRecipes } from './views'
 import { setFilters } from './filters'
 
 renderRecipes()
-log(getRecipes())
 
 doc.querySelector('#create-recipe').addEventListener('click', (e) => {
     const id = createRecipe()

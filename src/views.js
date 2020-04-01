@@ -39,6 +39,7 @@ const renderRecipes = () => {
     // Sort by wich value are chosing
     dropdown.addEventListener('change', (e) => {
         log(e.target.value)
+        log(getRecipes())
     })
     
     recipesEl.innerHTML = ''
