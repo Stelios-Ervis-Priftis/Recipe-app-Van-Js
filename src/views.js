@@ -1,5 +1,5 @@
 import { log, doc } from './helpers'
-import { getRecipes, toggleIngredients, removeIngredient } from './recipes'
+import { getRecipes, toggleIngredients, removeIngredient, sortRecipes } from './recipes'
 import { getFilters } from './filters'
 
 // generateRecipeDOM
@@ -28,19 +28,13 @@ const generateRecipeDom = (recipe) => {
 // Return value: the recipe element
 
 // renderRecipes
-// Render application todos base on the filters
+// Render application recipes base on the filters
 const renderRecipes = () => {
-    const dropdown = doc.querySelector('#filter-by')
     const recipesEl = doc.querySelector('#recipes')
     const recipes = getRecipes()
     const filters = getFilters()
-    const filteredRecipes = recipes.filter((recipe) => recipe.title.toLowerCase().includes(filters.searchText.toLowerCase()) || recipe.subTitle.toLowerCase().includes(filters.searchText.toLowerCase()))
-
-    // Sort by wich value are chosing
-    dropdown.addEventListener('change', (e) => {
-        log(e.target.value)
-        log(getRecipes())
-    })
+    const sortedRecipes = sortRecipes(recipes, filters)
+    const filteredRecipes = sortedRecipes.filter((recipe) => recipe.title.toLowerCase().includes(filters.searchText.toLowerCase()) || recipe.subTitle.toLowerCase().includes(filters.searchText.toLowerCase()))
     
     recipesEl.innerHTML = ''
 

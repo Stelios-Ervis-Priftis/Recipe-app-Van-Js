@@ -39,6 +39,7 @@ const createRecipe = () => {
         id: recipeId,
         title: '',
         subTitle: '',
+        popularity: 0,
         body: '',
         createdAt: timestamp,
         upDateAt: timestamp,
@@ -142,6 +143,30 @@ const upDateRecipe = (id, updates) => {
     return recipe
 }
 
+const sortRecipes = (recipes, filters) => {
+    if (filters.sortBy === 'byCreatedDate') {
+        return recipes.sort((a, b) => {
+            if (a.createdAt > b.createdAt) {
+                return -1
+            } else if (a.createdAt < b.createdAt) {
+                return 1
+            } else {
+                return 0
+            }
+        })
+    } else if (filters.sortBy === 'byPopularity') {
+        return recipes.sort((a, b) => {
+            if (a.popularity > b.popularity) {
+                return -1
+            } else if (a.popularity < b.popularity) {
+                return 1
+            } else {
+                return 0
+            }
+        })
+    }
+}
+
 loadRecipes()
 // Make sure to call loadRecipe and setup the exports
-export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients, upDateRecipe, loadRecipes }
+export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients, upDateRecipe, loadRecipes, sortRecipes }
