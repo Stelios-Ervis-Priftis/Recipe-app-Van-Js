@@ -1,12 +1,13 @@
 import { log, doc } from './helpers'
 import { initializeEditPage, renderIngredients } from './views'
-import { upDateRecipe, loadRecipes, removeRecipe, createIngredient } from './recipes'
+import { upDateRecipe, loadRecipes, removeRecipe, createIngredient, readyToCookIt } from './recipes'
 
 const recTitleEl = doc.querySelector('#recipe-title')
 const recSubTitleEl = doc.querySelector('#recipe-sub-title')
 const recBody = doc.querySelector('#recipe-body')
 const recDelete = doc.querySelector('#delete-recipe')
 const recHomePage = doc.querySelector('#return')
+const cookTheRecipe = doc.querySelector('#cook-the-recipe')
 const recipeId = location.hash.substring(1)
 
 const createIngredientBtn = doc.querySelector('#add-ingredients')
@@ -35,6 +36,10 @@ recBody.addEventListener('input', (e) => {
 recDelete.addEventListener('click', (e) => {
     removeRecipe(recipeId)
     location.assign('./index.html')
+})
+
+cookTheRecipe.addEventListener('click', (e) => {
+    readyToCookIt(recipeId, cookTheRecipe)
 })
 
 recHomePage.addEventListener('click', (e) => {

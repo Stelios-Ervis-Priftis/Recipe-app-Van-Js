@@ -89,12 +89,7 @@
         padding: 0.4rem;
         border-radius: 0.2rem;
         font-size: 1rem;
-    }
-
-    .btn:hover {
-        color: #127912;
-        background-color: white;
-        border-color: currentColor;
+        color: white;
     }
 
     .btn:active {
@@ -129,21 +124,14 @@
     }
 
     .btn-danger {
+        cursor: pointer;
+        color: white;
         background-color: firebrick;
         border: 1px solid white;
         padding: 0.4rem;
         border-radius: 0.2rem;
         font-size: 1rem;
     }
-
-    .btn-danger:hover {
-        color: firebrick;
-        border-color: currentColor;
-        background-color: white;
-        /* box-shadow: 0 0 0 1px firebrick,
-        0 0 0 1px firebrick; */
-    }
-
     .recipe {
         width: 27em;
         border: 1px solid;
@@ -174,35 +162,13 @@
         font-size: 10px;
     }
 
-    /* .recipe {
-        border: 1px solid;
-        border-radius: 0.3rem;
-    }
-
-    .recipe:hover {
-        color: midnightblue;
-        border-color: currentColor;
-        background-color: white;
-    }
-
-    .recipe a p {
-        color: inherit;
-        border-color: currentColor;
-        background-color: inherit;
-        text-align: center;
-        margin: 6px;
-        font-size: 1rem;
-    }
-
-    .rec-title {
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 2rem;
-    } */
-
-    .error {
+    .inp-error {
         color: firebrick;
         border: 1px solid firebrick;
+    }
+
+    .btn-error {
+        background-color: firebrick;
     }
 
     .empty-message {

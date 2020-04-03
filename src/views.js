@@ -57,7 +57,7 @@ const generateIngredientsDom = (recipeId, ingredient) => {
     const ingredientRoot = doc.createElement('div')
     const ingredientCheckbox = doc.createElement('input')
     const ingredientText = doc.createElement('span')
-    const removeButton = doc.createElement('button')
+    const removeButton = doc.createElement('span')
 
     // actions
     removeButton.addEventListener('click', (e) => {
@@ -72,7 +72,7 @@ const generateIngredientsDom = (recipeId, ingredient) => {
 
     // setup text content and attributes 
     ingredientCheckbox.setAttribute('type', 'checkbox')
-    removeButton.textContent = 'x'
+    removeButton.textContent = 'remove'
     ingredientText.textContent = ingredient.text
 
     // append the elements
@@ -96,7 +96,7 @@ const renderIngredients = (recipeId) => {
         })
     } else {
         const emptyMessage = document.createElement('p')
-        emptyMessage.textContent = 'No ingrendients available.'
+        emptyMessage.textContent = 'No ingredient\'s available.'
         ingredientsEl.appendChild(emptyMessage)
     }
 }

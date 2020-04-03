@@ -1,6 +1,6 @@
 import moment from 'moment'
 import uuidv4 from'uuid/v4'
-import { log, animateCSS } from './helpers'
+import { log, animateCSS, doc } from './helpers'
 
 // Setup the empty recipes array
 let recipes = []
@@ -83,7 +83,7 @@ const createIngredient = (id, e) => {
         e.target.elements.newIngredient.removeAttribute('class', 'error')
         saveRecipes()
     } else {
-        e.target.elements.newIngredient.setAttribute('class', 'error')
+        e.target.elements.newIngredient.classList.add('inp-error')
         animateCSS(ingredientEl, 'shake', 'faster')
     }
 }
@@ -167,6 +167,36 @@ const sortRecipes = (recipes, filters) => {
     }
 }
 
+const readyToCookIt = (recipeId, cookTheRecipe) => {
+    const recipe = recipes.find((recipe) => recipeId === recipe.id)
+    const totalIngredients = recipe.ingredients.length
+    const ingredientInStock = recipe.ingredients.filter((ingredient) => ingredient.completed)
+
+    if (totalIngredients === ingredientInStock.length) {
+        recipe.popularity += 1
+        ingredientInStock.forEach(ingredient => {
+            ingredient.completed = false
+        });
+        saveRecipes()
+        location.assign(`/index.html`)
+    } else {
+        animateCSS(cookTheRecipe, 'shake')
+        cookTheRecipe.textContent = 'No ingredient\'s available.'
+        cookTheRecipe.classList.add('btn-error')
+    }
+}
+
 loadRecipes()
 // Make sure to call loadRecipe and setup the exports
-export { createRecipe, createIngredient, getRecipes, removeRecipe, removeIngredient, toggleIngredients, upDateRecipe, loadRecipes, sortRecipes }
+export { 
+    createRecipe, 
+    createIngredient, 
+    getRecipes, 
+    removeRecipe, 
+    removeIngredient, 
+    toggleIngredients, 
+    upDateRecipe, 
+    loadRecipes, 
+    sortRecipes, 
+    readyToCookIt
+}
