@@ -115,6 +115,14 @@ const toggleIngredients = (recipeId, ingredientId) => {
             saveRecipes()
         }
     })
+    const totalIngredients = recipe.ingredients.length
+    const ingredientInStock = recipe.ingredients.filter((ingredient) => ingredient.completed)
+
+    if (totalIngredients === ingredientInStock.length) {
+        const cookTheRecipe = doc.querySelector('#cook-the-recipe')
+        cookTheRecipe.textContent = 'Cook Me!'
+        cookTheRecipe.classList.remove('btn-error')
+    }
 }
 // Arguments: id of recipe for accessed and id of ingredient to toggle it
 // Return value: none
@@ -181,13 +189,13 @@ const readyToCookIt = (recipeId, cookTheRecipe) => {
         location.assign(`/index.html`)
     } else {
         animateCSS(cookTheRecipe, 'shake')
-        cookTheRecipe.textContent = 'No ingredient\'s available.'
+        cookTheRecipe.textContent = 'Ingredient\'s not in stock.'
         cookTheRecipe.classList.add('btn-error')
     }
 }
 
 loadRecipes()
-// Make sure to call loadRecipe and setup the exports
+
 export { 
     createRecipe, 
     createIngredient, 
