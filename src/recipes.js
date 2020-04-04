@@ -179,8 +179,8 @@ const readyToCookIt = (recipeId, cookTheRecipe) => {
     const recipe = recipes.find((recipe) => recipeId === recipe.id)
     const totalIngredients = recipe.ingredients.length
     const ingredientInStock = recipe.ingredients.filter((ingredient) => ingredient.completed)
-
-    if (totalIngredients === ingredientInStock.length) {
+    
+    if (totalIngredients === ingredientInStock.length && recipe.ingredients.length !== 0) {
         recipe.popularity += 1
         ingredientInStock.forEach(ingredient => {
             ingredient.completed = false
