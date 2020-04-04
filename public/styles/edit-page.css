@@ -74,8 +74,8 @@
     .actions input, .textarea {
         font-size: 14px;
         padding: 4px;
-        border: 2px solid midnightblue;
-        border-radius: 0.5rem;
+        border: 1.5px solid midnightblue;
+        border-radius: 0.5em;
     }
 
     .textarea {
@@ -91,16 +91,63 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 2rem;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         width: 17.2em;
+        padding: 1em;
+    }
+
+    .ingredients-cnt {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-gap: 1em;
+    }
+
+    .ingredients-cnt, h2 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    
+    .ingredients {
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+    }
+
+    .ingredients label {
+        display: inherit;
+        grid-template-columns: 0fr 2fr 0fr;
+        justify-self: center;
+        grid-gap: 0.5em;
+        border: 1.5px solid midnightblue;
+        border-radius: 0.5em;
+        padding: 0.5em;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .ingredients label input {
+        height: 25px;
+        width: 30px;
+    }
+
+    .ingredients span {
+        justify-self: start;
+        align-self: center;
+    }
+
+    .ingredients button {
+        font-size: 15px;
+        color: firebrick;
+        border: 2px solid firebrick;
+        border-radius: 0.5em;
     }
 
     .btn {
         cursor: pointer;
-        border: 1px solid white;
+        border: 1.5px solid white;
         background-color: #1d9d1d;
         padding: 0.4rem;
-        border-radius: 0.2rem;
+        border-radius: 0.5rem;
         font-size: 1rem;
         color: white;
     }

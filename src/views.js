@@ -54,10 +54,10 @@ const renderRecipes = () => {
 // Return value: none
 
 const generateIngredientsDom = (recipeId, ingredient) => {
-    const ingredientRoot = doc.createElement('div')
+    const ingredientRoot = doc.createElement('label')
     const ingredientCheckbox = doc.createElement('input')
     const ingredientText = doc.createElement('span')
-    const removeButton = doc.createElement('span')
+    const removeButton = doc.createElement('button')
 
     // actions
     removeButton.addEventListener('click', (e) => {

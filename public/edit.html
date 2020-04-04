@@ -20,26 +20,28 @@
         <div>
             <h1 class="title">Create Your Recipe</h1>
         </div>
+        <div class="btn-act-ctr">
+            <div class="home-page">
+                <button id="return" class="btn">Home Page</button>
+            </div>
+            <div class="cook-the-recipe">
+                <button id="cook-the-recipe" class="btn">Cook Me!</button>
+            </div>
+        </div>
         <div class="actions">
             <input id="recipe-title" placeholder="Your Recipe Title" />
             <input id="recipe-sub-title" placeholder="Your Recipe Category" />
             <textarea id="recipe-body" class="textarea" placeholder="Your Recipe Preparation" cols="10" rows="10"></textarea>
         </div>
-        <div class="ingredientsCnt">
-            <h2>Ingredients</h2>
-            <div id="ingredients"></div>
+        <div class="ingredients-cnt">
+            <h2>Ingredients List</h2>
+            <div id="ingredients" class="ingredients"></div>
         </div>
         <div class="submit">
             <form id="add-ingredients">
                 <input id="ingredients" type="text" placeholder="Add ingredients" name="newIngredient">
                 <button class="btn">Add ingredients</button>
             </form>
-        </div>
-        <div class="cook-the-recipe">
-            <button id="cook-the-recipe" class="btn">Cook Me!</button>
-        </div>
-        <div class="home-page">
-            <button id="return" class="btn">Home Page</button>
         </div>
         <div class="delete">
             <button id="delete-recipe" class="btn-danger">Delete recipe</button>
