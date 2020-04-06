@@ -8,19 +8,29 @@ const generateRecipeDom = (recipe) => {
     const recipeRoot = doc.createElement('div')
     const recipeEl = doc.createElement('a')
     const textEl = doc.createElement('p')
+    const heartEl = doc.createElement('i')
+    const recPopEl = doc.createElement('p')
 
     if (recipe.title.length > 0) {
         textEl.textContent = recipe.title
     } else {
         textEl.textContent = 'Unnamed Recipe'
     }
-    recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
     recipeRoot.setAttribute('class', 'recipe')
+    recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
     textEl.setAttribute('class', 'rec-title')
+    heartEl.setAttribute('class', 'far fa-heart')
+    recPopEl.textContent = recipe.popularity
+    log(recipe.popularity)
+    // heartEl.setAttribute('class', 'fas fa-heart')
 
+
+    recipeRoot.appendChild(recipeEl)
     recipeEl.appendChild(textEl)
     recipeEl.appendChild(ingredientsStockMessage(recipe))
-    recipeRoot.appendChild(recipeEl)
+    recipeRoot.appendChild(heartEl)
+    recipeRoot.appendChild(recPopEl)
+
 
     return recipeRoot
 }
@@ -55,7 +65,9 @@ const renderRecipes = () => {
 
 const generateIngredientsDom = (recipeId, ingredient) => {
     const ingredientRoot = doc.createElement('label')
+    const checkboxLabel = doc.createElement('label')
     const ingredientCheckbox = doc.createElement('input')
+    const customCheckbox = doc.createElement('span')
     const ingredientText = doc.createElement('span')
     const removeButton = doc.createElement('button')
 
@@ -70,13 +82,18 @@ const generateIngredientsDom = (recipeId, ingredient) => {
     })
     ingredientCheckbox.checked = ingredient.completed
 
-    // setup text content and attributes 
+    // setup text content and attributes
+    ingredientRoot.setAttribute('class', 'ingredientRoot')
+    checkboxLabel.setAttribute('class', 'checkbox-label')
     ingredientCheckbox.setAttribute('type', 'checkbox')
+    customCheckbox.setAttribute('class', 'checkbox-custom')
     removeButton.textContent = 'remove'
     ingredientText.textContent = ingredient.text
 
     // append the elements
-    ingredientRoot.appendChild(ingredientCheckbox)
+    ingredientRoot.appendChild(checkboxLabel)
+    checkboxLabel.appendChild(ingredientCheckbox)
+    checkboxLabel.appendChild(customCheckbox)
     ingredientRoot.appendChild(ingredientText)
     ingredientRoot.appendChild(removeButton)
 

@@ -4,7 +4,7 @@ import { renderRecipes } from './views'
 import { setFilters, getFilters } from './filters'
 
 renderRecipes()
-log(getRecipes())
+
 // Sort by witch value are choosing
 doc.querySelector('#filter-by').addEventListener('change', (e) => {
     setFilters({

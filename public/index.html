@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe App</title>
     <link rel="stylesheet" href="./styles/index-page.css">
+    <link href="https://fonts.googleapis.com/css?family=Courier+Prime|Nova+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="https://kit.fontawesome.com/383954b5e8.js" crossorigin="anonymous"></script>
 </head>
@@ -21,21 +22,21 @@
             <h1>Recipe App</h1>
         </div>
         <div class="btn-act-ctr">
-            <div>
-                <select id="filter-by" class="dropdown">
+            <div class="dropdown">
+                <select id="filter-by">
                     <option value="byCreatedDate">Most recently</option>
                     <option value="byPopularity">Popularity</option>
                 </select>
             </div>
-            <div>
-                <button id="create-recipe" class="btn">Create Recipe</button>
+            <div class="btn">
+                <button id="create-recipe">Create Recipe</button>
             </div>
-            <div>
-                <input id="search-text" class="rec-flt-inp" type="text" placeholder="Search Recipe or Category">
+            <div class="rec-flt-inp">
+                <input id="search-text" type="text" placeholder="Search Recipe or Category">
                 <i class="fas fa-search"></i>
             </div>
         </div>
-        <div id="recipes"></div>
+        <div id="recipes" class="rec-cnt"></div>
     </div>
     <!-- <div class="footer">
         <p>Created by Dev-Chronicle</p>

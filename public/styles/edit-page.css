@@ -27,12 +27,8 @@
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) {
-    @import url('https://fonts.googleapis.com/css?family=Allerta|Allerta+Stencil&display=swap');
     * {
-        /* font-family: 'Open Sans'; */
-        /* font-family: "Courier New", Courier, monospace; */
-        /* font-family: "Lucida Console", Monaco, monospace; */
-        font-family: monospace;
+        font-family: 'Nova Mono', monospace;    
         text-decoration: none;
         margin: 0px;
     }
@@ -50,27 +46,72 @@
         display: grid;
     }
 
+    .header {
+        grid-template-columns: 3fr 1fr 3fr;
+        color: white;
+        position: sticky;
+        background-color: steelblue;
+        border-bottom: 1px solid steelblue;
+        border-radius: 3px;
+        left: 0;
+        top: 0;
+        height: 3.5em;
+        width: 100%;
+        -webkit-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+        box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+    }
+
+    .header h1 {
+        display: grid;
+        justify-self: center;
+        font-size: 1.3em;
+    }
+
+    .left-headline {
+        align-self: center;
+        justify-self: end;
+    }
+
+    .right-headline {
+        align-self: center;
+        justify-self: start;
+    }
+
+    .header span {
+        display: grid;
+    }
+
+    .header i {
+        place-self: center;
+        color: firebrick;
+        font-size: 3em;
+        margin: 0px;
+        padding: 0px;
+    }
+
     .container {
         place-items: center;
         grid-template-columns: 1fr;
-        grid-gap: 1em;
+        grid-gap: 0.7em;
+        width: 100%;
     }
 
     .title h1 {
-        font-size: 34.5px;
-        border-bottom: 2px solid midnightblue;
+        font-size: 32px;
     }
 
     .actions {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 1em;
+        width: 100%;
     }
 
     .actions input, .textarea {
-        font-size: 14px;
-        padding: 4px;
-        border: 1.5px solid midnightblue;
+        font-size: 13px;
+        padding: 8px;
+        border: 1.5px solid steelblue;
         border-radius: 0.5em;
     }
 
@@ -88,7 +129,7 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 1.5em;
         grid-template-rows: 1fr;
-        width: 23.4em;
+        width: 100%;
         margin-top: 1.5em;
     }
 
@@ -96,54 +137,179 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 0.5em;
+        width: 100%;
     }
 
-    .ingredients-cnt h1 {
-        border-bottom: 2px solid midnightblue;
-        font-size: 38.5px;
-    }
-    
     .ingredients {
         grid-template-columns: 1fr;
-        grid-gap: 0.1em;
+        grid-gap: 0.2em;
     }
 
-    .ingredients label {
+    .ingredientRoot {
         display: inherit;
         grid-template-columns: 0fr 2fr 0fr;
         grid-gap: 0.5em;
-        border: 1.5px solid midnightblue;
+        border: 1.5px solid steelblue;
         border-radius: 0.5em;
         padding: 0.5em;
         background-color: white;
-        color: black;
+        color: #3C4142;
         cursor: pointer;
     }
-    
-    .ingredients input {
-        height: 30px;
-        width: 30px;
+
+    .ingredients-cnt h1 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 0.2em;
+    }
+
+    .ingredients p {
+        text-align: center;
+        font-size: 1em;
+        margin-bottom: 1em;
+        text-decoration: underline;
+    }
+
+    /* Styling Checkbox Starts */
+    .checkbox-label {
+        display: block;
+        position: relative;
+        margin: 0;
+        cursor: pointer;
+        font-size: 22px;
+        line-height: 24px;
+        height: 24px;
+        width: 24px;
+        clear: both;
+    }
+
+    .checkbox-label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkbox-label .checkbox-custom {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 24px;
+        width: 24px;
+        background-color: transparent;
+        border-radius: 0.5em;
+        transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        border: 1px solid #009BFF;
+    }
+
+
+    .checkbox-label input:checked ~ .checkbox-custom {
+        background-color: #FFFFFF;
+        border-radius: 0.5em;
+        -webkit-transform: rotate(0deg) scale(1);
+        -ms-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+        opacity:1;
+        border: 1px solid #009BFF;
+    }
+
+
+    .checkbox-label .checkbox-custom::after {
+        position: absolute;
+        content: "";
+        left: 12px;
+        top: 12px;
+        height: 0px;
+        width: 0px;
+        border-radius: 5px;
+        border: solid #009BFF;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(0deg) scale(0);
+        -ms-transform: rotate(0deg) scale(0);
+        transform: rotate(0deg) scale(0);
+        opacity:1;
+        transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+    }
+
+
+    .checkbox-label input:checked ~ .checkbox-custom::after {
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+    opacity:1;
+    left: 8px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #009BFF;
+    border-width: 0 2px 2px 0;
+    background-color: transparent;
+    border-radius: 0;
+    }
+
+
+
+    /* For Ripple Effect */
+    .checkbox-label .checkbox-custom::before {
+        position: absolute;
+        content: "";
+        left: 10px;
+        top: 10px;
+        width: 0px;
+        height: 0px;
+        border-radius: 5px;
+        border: 2px solid #FFFFFF;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);    
+    }
+
+    .checkbox-label input:checked ~ .checkbox-custom::before {
+        left: -3px;
+        top: -3px;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
+        -webkit-transform: scale(3);
+        -ms-transform: scale(3);
+        transform: scale(3);
+        opacity:0;
+        z-index: 999;
+        transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
     }
 
     .ingredients span {
         align-self: center;
+        font-size: 1em;
     }
 
     .ingredients button {
         cursor: pointer;
         color: firebrick;
+        background-color: white;
         align-self: center;
-        border: 2px solid midnightblue;
-        font-size: 17px;
+        border: 1px solid firebrick;
+        font-size: 15px;
         border-radius: 0.5em;
     }
 
     .btn {
         cursor: pointer;
-        border: 1.5px solid white;
-        background-color: #1d9d1d;
-        padding: 0.4rem;
-        border-radius: 0.5rem;
+        border: 1px solid steelblue;
+        background-color: #39AD48;
+        padding: 0.4em;
+        border-radius: 0.5em;
         font-size: 15px;
         color: white;
     }
@@ -157,16 +323,16 @@
         color: black;
         background-color: white;
         border: 1px solid white;
-        border-radius: 0.2rem;
-        padding: 0.4rem;
-        font-size: 1rem;
+        border-radius: 0.2em3.5em;
+        padding: 0.4em3.5em;
+        font-size: 1em3.5em;
     }
 
     .dropdown {
         color: black;
         border: 1px solid white;
-        border-radius: 0.2rem;
-        font-size: 1rem;
+        border-radius: 0.2em3.5em;
+        font-size: 1em3.5em;
         text-align: center;
     }
 
@@ -179,19 +345,10 @@
         margin-top: 6px;
     }
 
-    .btn-danger {
-        cursor: pointer;
-        color: white;
-        background-color: firebrick;
-        border: 1px solid white;
-        padding: 0.4rem;
-        border-radius: 0.2rem;
-        font-size: 1rem;
-    }
     .recipe {
         width: 27em;
         border: 1px solid;
-        border-radius: 0.3rem;
+        border-radius: 0.3em3.5em;
         margin-top: 1.5em;
         padding: 1ex;
     }
@@ -219,73 +376,62 @@
     }
 
     .inp-error {
-        color: firebrick;
-        border: 1px solid firebrick;
+        border: 1.5px solid firebrick !important;
     }
 
     .btn-error {
-        background-color: firebrick;
+        color: firebrick;
+        background-color: white;
+        border: 1.5px solid firebrick;
+        font-size: 10.1px;
     }
 
     .empty-message {
-        font-size: 1.5rem;
-        margin-top: 10rem;
+        font-size: 1.5em3.5em;
+        margin-top: 10em3.5em;
     }
 
-    .header {
-        grid-template-columns: 3fr 1fr 3fr;
-        color: white;
-        position: sticky;
-        background-color: steelblue;
-        border-bottom: 0.5px solid white;
-        left: 0;
-        top: 0;
-        height: 4.7rem;
+    .submit {
         width: 100%;
-        -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
-        -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
-        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.5);
     }
 
-    .header h1 {
+    .submit form {
         display: grid;
-        font-size: 1.7em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 1.5em;
     }
 
-    .left-headline {
-        align-self: center;
-        justify-self: end;
+    .submit form input {
+        font-size: 13px;
+        padding: 0.4em;
+        border: 0.5px solid steelblue;
+        border-radius: 0.5em;
     }
 
-    .right-headline {
-        align-self: center;
-        justify-self: start;
+    .btn-danger {
+        cursor: pointer;
+        color: white;
+        background-color: firebrick;
+        border: 1px solid steelblue;
+        font-size: 15px;
+        margin-bottom: 1em;
+        border-radius: 0.5em;
+        padding: 0.4em3.5em;
     }
 
-    .header span {
-        display: grid;
-    }
-
-    .header i {
-        place-self: center;
-        color: firebrick;
-        font-size: 3.5rem;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .footer {
+    /* .footer {
         color: white;
         position: fixed;
         text-align: center;
         background-color: steelblue;
         border-top: 0.5px solid white;
-        height: 4rem;
+        height: 4em3.5em;
         left: 0;
         bottom: 0;
         width: 100%;
         -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
         -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
         box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.5);
-    }
+    } */
 }
