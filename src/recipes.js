@@ -83,7 +83,11 @@ const createIngredient = (id, e) => {
         e.target.elements.newIngredient.removeAttribute('class', 'error')
 
         const cookTheRecipe = doc.querySelector('#cook-the-recipe')
-        cookTheRecipe.textContent = 'Cook Me!'
+        const forkIcon = doc.createElement('i')
+        cookTheRecipe.textContent = 'Cook'
+        forkIcon.setAttribute('class', 'fas fa-utensils fork')
+        cookTheRecipe.appendChild(forkIcon)
+        cookTheRecipe.append('It')
         cookTheRecipe.classList.remove('btn-error')
 
         saveRecipes()
@@ -125,7 +129,11 @@ const toggleIngredients = (recipeId, ingredientId) => {
 
     if (totalIngredients === ingredientInStock.length) {
         const cookTheRecipe = doc.querySelector('#cook-the-recipe')
-        cookTheRecipe.textContent = 'Cook Me!'
+        const forkIcon = doc.createElement('i')
+        cookTheRecipe.textContent = 'Cook'
+        forkIcon.setAttribute('class', 'fas fa-utensils fork')
+        cookTheRecipe.appendChild(forkIcon)
+        cookTheRecipe.append('It')
         cookTheRecipe.classList.remove('btn-error')
     }
 }
