@@ -113,7 +113,7 @@
         grid-template-columns: 1fr;
         grid-gap: 1em;
         grid-template-rows: repeat(3, 1fr);
-        width: 93%;
+        width: 95%;
     }
 
     .dropdown select {
@@ -161,7 +161,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 1em;
-        width: 93%;
+        width: 95%;
         margin-bottom: 1em;
         /* For footer */
         /* margin-bottom: 5em; */
