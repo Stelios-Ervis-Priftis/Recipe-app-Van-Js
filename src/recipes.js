@@ -81,10 +81,15 @@ const createIngredient = (id, e) => {
         })
         e.target.elements.newIngredient.value = ''
         e.target.elements.newIngredient.removeAttribute('class', 'error')
+
+        const cookTheRecipe = doc.querySelector('#cook-the-recipe')
+        cookTheRecipe.textContent = 'Cook Me!'
+        cookTheRecipe.classList.remove('btn-error')
+
         saveRecipes()
     } else {
         e.target.elements.newIngredient.classList.add('inp-error')
-        animateCSS(ingredientEl, 'shake', 'faster')
+        animateCSS(ingredientEl, 'shake', 'fast')
     }
 }
 // Arguments: id of recipe for accessed to create the ingredient
@@ -187,8 +192,12 @@ const readyToCookIt = (recipeId, cookTheRecipe) => {
         });
         saveRecipes()
         location.assign(`/index.html`)
+    } else if (recipe.ingredients.length === 0) {
+        animateCSS(cookTheRecipe, 'shake', 'fast')
+        cookTheRecipe.textContent = 'Add ingredient\'s'
+        cookTheRecipe.classList.add('btn-error')
     } else {
-        animateCSS(cookTheRecipe, 'shake')
+        animateCSS(cookTheRecipe, 'shake', 'fast')
         cookTheRecipe.textContent = 'Ingredient\'s not in stock.'
         cookTheRecipe.classList.add('btn-error')
     }

@@ -105,7 +105,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 1em;
-        width: 100%;
+        width: 95%;
     }
 
     .actions input, .textarea {
@@ -126,10 +126,10 @@
 
     .btn-act-ctr {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-gap: 1.5em;
         grid-template-rows: 1fr;
-        width: 100%;
+        width: 95%;
         margin-top: 1.5em;
     }
 
@@ -137,7 +137,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 0.5em;
-        width: 100%;
+        width: 95%;
     }
 
     .ingredients {
@@ -234,18 +234,18 @@
 
 
     .checkbox-label input:checked ~ .checkbox-custom::after {
-    -webkit-transform: rotate(45deg) scale(1);
-    -ms-transform: rotate(45deg) scale(1);
-    transform: rotate(45deg) scale(1);
-    opacity:1;
-    left: 8px;
-    top: 3px;
-    width: 6px;
-    height: 12px;
-    border: solid #009BFF;
-    border-width: 0 2px 2px 0;
-    background-color: transparent;
-    border-radius: 0;
+        -webkit-transform: rotate(45deg) scale(1);
+        -ms-transform: rotate(45deg) scale(1);
+        transform: rotate(45deg) scale(1);
+        opacity:1;
+        left: 8px;
+        top: 3px;
+        width: 6px;
+        height: 12px;
+        border: solid #009BFF;
+        border-width: 0 2px 2px 0;
+        background-color: transparent;
+        border-radius: 0;
     }
 
 
