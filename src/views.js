@@ -21,15 +21,18 @@ const generateRecipeDom = (recipe) => {
     textEl.setAttribute('class', 'rec-title')
     heartEl.setAttribute('class', 'far fa-heart')
     recPopEl.textContent = recipe.popularity
-    log(recipe.popularity)
-    // heartEl.setAttribute('class', 'fas fa-heart')
+    
+    if (recipe.popularity > 0) {
+        heartEl.removeAttribute('class', 'far fa-heart')
+        heartEl.setAttribute('class', 'fas fa-heart')
+    }
 
 
     recipeRoot.appendChild(recipeEl)
     recipeEl.appendChild(textEl)
     recipeEl.appendChild(ingredientsStockMessage(recipe))
-    recipeRoot.appendChild(heartEl)
     recipeRoot.appendChild(recPopEl)
+    recipeRoot.appendChild(heartEl)
 
 
     return recipeRoot
@@ -55,8 +58,8 @@ const renderRecipes = () => {
         })
     } else {
         const emptyMessage = document.createElement('p')
-        emptyMessage.textContent = 'None recipe found.'
         emptyMessage.setAttribute('class', 'empty-message')
+        emptyMessage.textContent = 'None recipes found.'
         recipesEl.appendChild(emptyMessage)
     }
 }
@@ -113,6 +116,7 @@ const renderIngredients = (recipeId) => {
         })
     } else {
         const emptyMessage = document.createElement('p')
+        emptyMessage.setAttribute('class', 'empty-message')
         emptyMessage.textContent = 'No ingredient\'s available.'
         ingredientsEl.appendChild(emptyMessage)
     }
@@ -142,11 +146,11 @@ const ingredientsStockMessage = (recipe) => {
     const ingredientInStock = recipe.ingredients.filter((ingredient) => ingredient.completed)
 
     if (ingredientInStock.length === totalIngredients && totalIngredients !== 0) {
-        statusEl.textContent = `You have all the ingredients, ready to make it!`
+        statusEl.textContent = `You have the ingredients, don't be lazy!`
     } else if (ingredientInStock.length > 0) {
-        statusEl.textContent = `You have some of the ingredients, check out what you miss.`
+        statusEl.textContent = `You have some ingredients, what you miss?`
     } else if (totalIngredients > 0) {
-        statusEl.textContent = `You have add ingredients but you don't posses them yet.`
+        statusEl.textContent = `You have add ingredients but don't posses them yet.`
     } else if (totalIngredients === 0) {
         statusEl.textContent = `You haven't add any ingredients yet.`
     }

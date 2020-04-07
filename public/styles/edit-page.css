@@ -163,12 +163,6 @@
         margin-bottom: 0.2em;
     }
 
-    .ingredients p {
-        text-align: center;
-        font-size: 1em;
-        margin-bottom: 1em;
-        text-decoration: underline;
-    }
 
     /* Styling Checkbox Starts */
     .checkbox-label {
@@ -319,94 +313,66 @@
         filter: saturate(150%);
     }
 
-    .rec-flt-inp {
-        color: black;
-        background-color: white;
-        border: 1px solid white;
-        border-radius: 0.2em3.5em;
-        padding: 0.4em3.5em;
-        font-size: 1em3.5em;
-    }
-
-    .dropdown {
-        color: black;
-        border: 1px solid white;
-        border-radius: 0.2em3.5em;
-        font-size: 1em3.5em;
-        text-align: center;
-    }
-
-    .fas {
-        color: steelblue;
-        font-size: small;
-        position: absolute;
-        font-weight: 900;
-        margin-left: 16em;
-        margin-top: 6px;
-    }
-
-    .recipe {
-        width: 27em;
-        border: 1px solid;
-        border-radius: 0.3em3.5em;
-        margin-top: 1.5em;
-        padding: 1ex;
-    }
-
-    .recipe a {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .recipe p {
-        color: white;
-        justify-self: center;
-        align-self: center;
-    }
-
-    .rec-title {
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 1.5em;
-        margin-bottom: 0.5em;
-    }
-
-    .stock-message {
-        font-size: 10px;
-    }
-
     .inp-error {
-        border: 1.5px solid firebrick !important;
+        border: 0.5px solid firebrick !important;
     }
 
     .btn-error {
         color: firebrick;
         background-color: white;
-        border: 1.5px solid firebrick;
+        border: 0.5px solid firebrick;
         font-size: 10.1px;
     }
 
     .empty-message {
-        font-size: 1.5em3.5em;
-        margin-top: 10em3.5em;
+        text-align: center;
+        font-size: 1em;
+        margin: 4em 0em;
+        text-decoration: underline;
+        font-weight: bold;
     }
 
     .submit {
-        width: 100%;
+        width: 95%;
     }
 
     .submit form {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        grid-gap: 1.5em;
+        grid-gap: 1em;
     }
 
     .submit form input {
-        font-size: 13px;
+        text-align: center;
+        font-size: 15px;
         padding: 0.4em;
         border: 0.5px solid steelblue;
         border-radius: 0.5em;
+    }
+
+    .submit form button {
+        color: #39AD48;
+        background-color: white;
+        font-size: 15px;
+        padding: 0.4em;
+        border: 0.5px solid #39AD48;
+        border-radius: 0.5em;
+    }
+
+    .cook-or-delete {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 1em;
+        width: 95%;
+        margin-bottom: 1em;
+    }
+
+    .btn .fork {
+        position: inherit;
+        margin: 0px 10px;
+        color: white;
+        font-size: 1.2em;
     }
 
     .btn-danger {
@@ -415,23 +381,7 @@
         background-color: firebrick;
         border: 1px solid steelblue;
         font-size: 15px;
-        margin-bottom: 1em;
         border-radius: 0.5em;
-        padding: 0.4em3.5em;
+        padding: 0.4em;
     }
-
-    /* .footer {
-        color: white;
-        position: fixed;
-        text-align: center;
-        background-color: steelblue;
-        border-top: 0.5px solid white;
-        height: 4em3.5em;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
-        -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
-        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.5);
-    } */
 }
