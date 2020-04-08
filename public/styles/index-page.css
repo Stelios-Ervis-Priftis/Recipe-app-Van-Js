@@ -138,8 +138,10 @@
 
     .btn button::after {
         color: white;
-        content: '\00bb';
+        font-size: 16px;
+        content: '\276F \276F';
         position: relative;
+        top: -1px;
         right: -10px;
     }
     

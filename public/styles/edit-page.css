@@ -313,17 +313,19 @@
         color: white;
         text-transform: uppercase;
         border: 1px solid steelblue;
-        background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+        background: linear-gradient(to right, #67b26b, #4ca2cb);
         padding: 0.4em;
         border-radius: 0.5em;
         font-size: 15px;
     }
 
-    .btn button::after {
+    .rec-page button::before {
         color: white;
-        content: '\00bb';
+        font-size: 16px;
+        content: '\276E \276E';
         position: relative;
-        right: -10px;
+        top: -1px;
+        right: 10px;
     }
 
     /* .btn:active {
@@ -337,7 +339,7 @@
 
     .btn-error {
         color: firebrick;
-        background-color: white;
+        background: white;
         border: 0.5px solid firebrick;
         font-size: 10.1px;
     }
@@ -358,7 +360,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        grid-gap: 1em;
+        grid-gap: 0.3em;
     }
 
     .submit form input {
@@ -370,8 +372,8 @@
     }
 
     .submit form button {
-        color: #39AD48;
-        background-color: white;
+        color: white;
+        background: linear-gradient(to right, #67b26b, #4ca2cb);
         font-size: 15px;
         padding: 0.4em;
         border: 0.5px solid #39AD48;
