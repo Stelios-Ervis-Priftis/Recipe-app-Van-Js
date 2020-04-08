@@ -90,6 +90,16 @@
         padding: 0px;
     }
 
+    .rec-page {
+        display: grid;
+        position: sticky;
+        top: 59px;
+        margin-left: 0.6em;
+        margin-right: 0.6em;
+        margin-top: 1.5em;
+        margin-bottom: 0.7em;
+    }
+
     .container {
         place-items: center;
         grid-template-columns: 1fr;
@@ -300,18 +310,26 @@
 
     .btn {
         cursor: pointer;
+        color: white;
+        text-transform: uppercase;
         border: 1px solid steelblue;
-        background-color: #39AD48;
+        background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
         padding: 0.4em;
         border-radius: 0.5em;
         font-size: 15px;
-        color: white;
     }
 
-    .btn:active {
+    .btn button::after {
+        color: white;
+        content: '\00bb';
+        position: relative;
+        right: -10px;
+    }
+
+    /* .btn:active {
         transform: translateY(1px);
         filter: saturate(150%);
-    }
+    } */
 
     .inp-error {
         border: 0.5px solid firebrick !important;
@@ -378,7 +396,8 @@
     .btn-danger {
         cursor: pointer;
         color: white;
-        background-color: firebrick;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #920b0b, firebrick) !important;
         border: 1px solid steelblue;
         font-size: 15px;
         border-radius: 0.5em;
