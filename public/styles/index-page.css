@@ -1,5 +1,244 @@
 /* Media Queries */
 
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    * {
+        font-family: 'Nova Mono', monospace;
+        text-decoration: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    html {
+        height: 100%;
+    }
+    body {
+        display: grid;
+        color: white;
+        background-color: steelblue;
+        height: 100%;
+    }
+
+    div {
+        display: grid;
+    }
+
+    .header {
+        grid-column: 1/4;
+        grid-template-columns: 3fr 2.1fr 3fr;
+        color: white;
+        position: sticky;
+        background-color: steelblue;
+        border-bottom: 1px solid steelblue;
+        border-radius: 3px;
+        left: 0;
+        top: 0;
+        height: 3.5em;
+        width: 100%;
+        -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .header h1 {
+        text-transform: uppercase;
+        font-size: 1.3em;
+    }
+
+    .left-headline {
+        align-self: center;
+        justify-self: end;
+    }
+
+    .right-headline {
+        align-self: center;
+        justify-self: start;
+    }
+
+    .header span {
+        display: grid;
+    }
+
+     .header i {
+        place-self: center;
+        color: firebrick;
+        font-size: 3em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .container {
+        place-items: center;
+        grid-column: 2/2;
+        grid-template-columns: 1fr;
+        grid-gap: 1.5em;
+        width: 100%;
+    }
+
+    .title h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 60px;
+    }
+
+    .rec-book i {
+        font-size: 10em;
+        margin-bottom: 0.1em;
+    }
+
+    .btn-act-ctr {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+        grid-template-rows: repeat(3, 1fr);
+        width: 95%;
+    }
+
+    .dropdown select {
+        color: black;
+        background-color: white;
+        text-align: center;
+        border: 1px solid white;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5em;
+        font-size: 1em;
+    }
+
+    .btn button {
+        cursor: pointer;
+        color: white;
+        text-transform: uppercase;
+        border: 1px solid steelblue;
+        background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        padding: 0.4em;
+        border-radius: 0.5em;
+        font-size: 1em;
+    }
+
+    .btn button::after {
+        color: white;
+        font-size: 16px;
+        content: '\276F \276F';
+        position: relative;
+        top: -1px;
+        right: -10px;
+    }
+    
+    /* .btn:active {
+        transform: translateY(1px);
+        filter: saturate(150%);
+    } */
+
+    .rec-flt-inp input {
+        color: black;
+        background-color: white;
+        border: 1px solid white;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5em;
+        padding: 0.4em;
+        font-size: 1em;
+    }
+
+    .rec-flt-inp .fas {
+        color: steelblue;
+        position: absolute;
+        opacity: 0;
+        margin-left: 20em;
+        margin-top: 10px;
+    }
+
+    .rec-cnt {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-gap: 1em;
+        width: 95%;
+        margin-bottom: 1em;
+        /* For footer */
+        /* margin-bottom: 5em; */
+    }
+
+    .recipe {
+        grid-template-columns: 20fr 1fr 1fr;
+        background-color: white;
+        border: 1px solid steelblue;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5em;
+        padding: 0.5em;
+    }
+
+    .recipe a {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0.5em;
+    }
+
+    .recipe p {
+        color: steelblue;
+        justify-self: center;
+        align-self: center;
+        text-transform: uppercase;
+    }
+
+    .rec-title {
+        font-weight: bold;
+        /* text-decoration: underline; */
+        font-size: 1.5em;
+    }
+
+    .rec-title::after {
+        color: steelblue;
+        font-size: 16px;
+        content: '\276F \276F';
+        position: relative;
+        top: -4px;
+        right: -10px;
+    }
+
+    .stock-message {
+        font-size: 10px;
+    }
+
+    .recipe i {
+        color: red;
+        align-self: center;
+    }
+
+    .error {
+        color: firebrick;
+        border: 1px solid firebrick;
+    }
+
+    .empty-message {
+        font-size: 1.5em;
+        margin-top: 5.5em;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    /* .footer {
+        color: white;
+        position: fixed;
+        text-align: center;
+        background-color: steelblue;
+        border-bottom: 1px solid steelblue;
+        border-radius: 3px;
+        height: 4em;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        -webkit-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+        box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5);
+    } */
+}
+
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
