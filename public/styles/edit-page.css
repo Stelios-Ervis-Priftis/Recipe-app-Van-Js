@@ -84,20 +84,16 @@
         margin-bottom: 0.7em;
     }
 
-    .return::before {
-        color: white;
-        font-size: 16px;
-        content: '\276E \276E';
-        position: relative;
+    .return i {
         opacity: 0;
-        top: -1px;
-        left: 1px;
+        position: relative;
+        right: -9px;
         transition: 0.7s;
     }
 
-    .return:hover::before {
+    .return:hover i {
         opacity: 1;
-        left: -10px;
+        right: 10px;
     }
 
     .btn .fork {
@@ -518,20 +514,20 @@
         margin-bottom: 0.7em;
     }
 
-    .rec-page .return::before {
+    /* .rec-page .return::before {
         color: white;
         font-size: 16px;
         content: '\276E \276E';
         position: relative;
         top: -1px;
         right: 10px;
-    }
+    } */
 
     .btn .fork {
         position: inherit;
         margin: 0px 10px;
         color: white;
-        font-size: 1.2em;
+        /* font-size: 1.2em; */
     }
 
     .container {
@@ -846,7 +842,7 @@
 @media only screen 
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  /* and (-webkit-min-device-pixel-ratio: 3) {  */
     * {
         font-family: 'Nova Mono', monospace;    
         text-decoration: none;
@@ -923,20 +919,20 @@
         margin-bottom: 0.7em;
     }
 
-    .rec-page .return::before {
+    /* .rec-page .return::before {
         color: white;
         font-size: 16px;
         content: '\276E \276E';
         position: relative;
         top: -1px;
         right: 10px;
-    }
+    } */
 
     .btn .fork {
         position: inherit;
         margin: 0px 10px;
         color: white;
-        font-size: 1.2em;
+        /* font-size: 1.2em; */
     }
 
     .container {
@@ -1327,20 +1323,20 @@
         margin-bottom: 0.7em;
     }
 
-    .rec-page .return::before {
+    /* .rec-page .return::before {
         color: white;
         font-size: 16px;
         content: '\276E \276E';
         position: relative;
         top: -1px;
         right: 10px;
-    }
+    } */
 
     .btn .fork {
         position: inherit;
         margin: 0px 10px;
         color: white;
-        font-size: 1.2em;
+        /* font-size: 1.2em; */
     }
 
     .container {
