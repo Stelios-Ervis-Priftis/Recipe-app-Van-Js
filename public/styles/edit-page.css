@@ -31,7 +31,7 @@
         position: sticky;
         background-color: steelblue;
         grid-column: 1/4;
-        grid-template-columns: 3fr 2.1fr 3fr;
+        grid-template-columns: 3fr 1.8fr 3fr;
         border-bottom: 1px solid steelblue;
         border-radius: 3px;
         left: 0;
@@ -45,7 +45,7 @@
 
     .header h1 {
         text-transform: uppercase;
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
     .left-headline {
@@ -78,19 +78,26 @@
         grid-gap: 1em;
         top: 59px;
         height: 36px;
-        margin-left: 0.8em;
-        margin-right: 0.8em;
+        /* margin-left: 0.8em;
+        margin-right: 0.8em; */
         margin-top: 1.5em;
         margin-bottom: 0.7em;
     }
 
-    .rec-page .return::before {
+    .return::before {
         color: white;
         font-size: 16px;
         content: '\276E \276E';
         position: relative;
+        opacity: 0;
         top: -1px;
-        right: 10px;
+        left: 1px;
+        transition: 0.7s;
+    }
+
+    .return:hover::before {
+        opacity: 1;
+        left: -10px;
     }
 
     .btn .fork {
@@ -117,7 +124,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 1em;
-        width: 95%;
+        width: 100%;
     }
 
     .actions input, .textarea {
@@ -142,7 +149,7 @@
         grid-template-columns: 1fr;
         grid-gap: 1.5em;
         grid-template-rows: 1fr;
-        width: 95%;
+        width: 100%;
         margin-top: 1.5em;
     }
 
@@ -150,12 +157,12 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 0.5em;
-        width: 95%;
+        width: 100%;
     }
 
     .ingredients {
         grid-template-columns: 1fr;
-        grid-gap: 0.2em;
+        grid-gap: 0.5em;
     }
 
     .ingredientRoot {
@@ -163,12 +170,18 @@
         grid-template-columns: 0fr 2fr 0fr;
         grid-gap: 0.5em;
         border: 1.5px solid steelblue;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         border-radius: 0.5em;
         padding: 0.5em;
         background-color: white;
         color: #3C4142;
         cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .ingredientRoot:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
     }
 
     .ingredients-cnt h1 {
@@ -206,11 +219,6 @@
         width: 24px;
         background-color: transparent;
         border-radius: 0.5em;
-        transition: all 0.3s ease-out;
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        -ms-transition: all 0.3s ease-out;
-        -o-transition: all 0.3s ease-out;
         border: 1px solid #009BFF;
         box-shadow: 0px 0px 6.5px rgba(0, 0, 0, 0.1);
     }
@@ -242,11 +250,6 @@
         -ms-transform: rotate(0deg) scale(0);
         transform: rotate(0deg) scale(0);
         opacity:1;
-        transition: all 0.3s ease-out;
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        -ms-transition: all 0.3s ease-out;
-        -o-transition: all 0.3s ease-out;
     }
 
 
@@ -293,11 +296,6 @@
         transform: scale(3);
         opacity:0;
         z-index: 999;
-        transition: all 0.3s ease-out;
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        -ms-transition: all 0.3s ease-out;
-        -o-transition: all 0.3s ease-out;
     }
 
     .ingredients span {
@@ -322,17 +320,18 @@
         text-transform: uppercase;
         border: 1px solid steelblue;
         background: linear-gradient(to right, #67b26b, #4ca2cb);
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         padding: 0.4em;
         border-radius: 0.5em;
-        font-size: 15px;
+        font-size: 1em;
+        transition: 0.3s;
     }
 
-    /* .btn:active {
-        transform: translateY(1px);
-        filter: saturate(150%);
-    } */
-
+    .btn:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+    }
+    
     .inp-error {
         border: 0.5px solid firebrick !important;
     }
@@ -353,23 +352,28 @@
     }
 
     .submit {
-        width: 95%;
+        width: 100%;
     }
 
     .submit form {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-gap: 0.5em;
+        grid-gap: 1em;
     }
 
     .submit form input {
-        /* text-align: center; */
         font-size: 15px;
         padding: 0.4em;
         border: 0.5px solid steelblue;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         border-radius: 0.5em;
+        transition: 0.3s;
+    }
+
+    .submit form input:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
     }
 
     .submit form button {
@@ -377,11 +381,17 @@
         color: white;
         text-transform: uppercase;
         background: linear-gradient(to right, #67b26b, #4ca2cb);
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         font-size: 15px;
         padding: 0.4em;
         border: 0.5px solid #39AD48;
         border-radius: 0.5em;
+        transition: 0.3s;
+    }
+
+    .submit form button:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
     }
 
     .cook-or-delete {
@@ -398,12 +408,18 @@
         color: white;
         text-transform: uppercase;
         background: linear-gradient(to right, #920b0b, firebrick) !important;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         border: 1px solid steelblue;
         font-size: 15px;
         border-radius: 0.5em;
         padding: 0.4em;
         grid-column: 2/3;
+        transition: 0.3s;
+    }
+
+    .btn-danger:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
     }
 }
 
