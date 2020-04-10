@@ -29,7 +29,7 @@
 
     .header {
         grid-column: 1/4;
-        grid-template-columns: 3fr 2.1fr 3fr;
+        grid-template-columns: 3fr 1.8fr 3fr;
         color: white;
         position: sticky;
         background-color: steelblue;
@@ -38,7 +38,7 @@
         left: 0;
         top: 0;
         height: 3.5em;
-        width: 100%;
+        /* width: 100%; */
         -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
@@ -46,7 +46,7 @@
 
     .header h1 {
         text-transform: uppercase;
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
     .left-headline {
@@ -72,11 +72,10 @@
     }
 
     .container {
-        place-items: center;
+        /* place-items: center; */
         grid-column: 2/2;
         grid-template-columns: 1fr;
         grid-gap: 1.5em;
-        width: 100%;
     }
 
     .title h1 {
@@ -86,6 +85,7 @@
     }
 
     .rec-book i {
+        text-align: center;
         font-size: 10em;
         margin-bottom: 0.1em;
     }
@@ -95,7 +95,6 @@
         grid-template-columns: 1fr;
         grid-gap: 1em;
         grid-template-rows: repeat(3, 1fr);
-        width: 95%;
     }
 
     .dropdown select {
@@ -114,10 +113,11 @@
         text-transform: uppercase;
         border: 1px solid steelblue;
         background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.1);
         padding: 0.4em;
         border-radius: 0.5em;
         font-size: 1em;
+        transition: 0.3s;
     }
 
     .btn button::after {
@@ -125,14 +125,21 @@
         font-size: 16px;
         content: '\276F \276F';
         position: relative;
-        top: -1px;
+        opacity: 0;
+        top: -0.5px;
+        right: -1px;
+        transition: 0.7s;
+    }
+
+    .btn button:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+    }
+
+    .btn:hover button::after {
+        opacity: 1;
         right: -10px;
     }
-    
-    /* .btn:active {
-        transform: translateY(1px);
-        filter: saturate(150%);
-    } */
 
     .rec-flt-inp input {
         color: black;
@@ -157,19 +164,19 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-gap: 1em;
-        width: 95%;
         margin-bottom: 1em;
         /* For footer */
         /* margin-bottom: 5em; */
     }
 
     .recipe {
-        grid-template-columns: 20fr 1fr 1fr;
+        grid-template-columns: 18fr 1fr 1fr;
         background-color: white;
         border: 1px solid steelblue;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 0.5em;
         padding: 0.5em;
+        transition: 0.3s;
     }
 
     .recipe a {
@@ -187,7 +194,6 @@
 
     .rec-title {
         font-weight: bold;
-        /* text-decoration: underline; */
         font-size: 1.5em;
     }
 
@@ -196,8 +202,22 @@
         font-size: 16px;
         content: '\276F \276F';
         position: relative;
+        opacity: 0;
         top: -4px;
-        right: -10px;
+        right: -1px;
+        transition: 0.7s;
+        /* top: -4px;
+        right: -10px; */
+    }
+
+    .recipe:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+    }
+
+    .recipe:hover a .rec-title::after {
+        opacity: 1;
+        right: -15px;
     }
 
     .stock-message {
