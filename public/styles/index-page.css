@@ -20,7 +20,6 @@
         display: grid;
         color: white;
         background-color: steelblue;
-        height: 100%;
     }
 
     div {
@@ -193,6 +192,7 @@
     }
 
     .rec-title {
+        text-align: center;
         font-weight: bold;
         font-size: 1em;
     }
@@ -270,7 +270,6 @@
     body {
         color: white;
         background-color: steelblue;
-        height: 100%;
     }
 
     div {
@@ -291,6 +290,7 @@
         -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999;
     }
 
     .header h1 {
@@ -430,18 +430,16 @@
     }
 
     .rec-title {
+        text-align: center;
         font-weight: bold;
-        /* text-decoration: underline; */
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
-    .rec-title::after {
-        color: steelblue;
-        font-size: 16px;
-        content: '\276F \276F';
+    .rec-arrow {
+        color: steelblue !important;
         position: relative;
-        top: -4px;
-        right: -10px;
+        position: relative;
+        left: 10px;
     }
 
     .stock-message {
@@ -500,10 +498,10 @@
     html {
         height: 100%;
     }
+    
     body {
         color: white;
         background-color: steelblue;
-        height: 100%;
     }
 
     div {
@@ -524,6 +522,7 @@
         -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999;
     }
 
     .header h1 {
@@ -663,18 +662,16 @@
     }
 
     .rec-title {
+        text-align: center;
         font-weight: bold;
-        /* text-decoration: underline; */
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
-    .rec-title::after {
-        color: steelblue;
-        font-size: 16px;
-        content: '\276F \276F';
+    .rec-arrow {
+        color: steelblue !important;
         position: relative;
-        top: -4px;
-        right: -10px;
+        position: relative;
+        left: 10px;
     }
 
     .stock-message {
@@ -736,7 +733,6 @@
     body {
         color: white;
         background-color: steelblue;
-        height: 100%;
     }
 
     div {
@@ -757,6 +753,7 @@
         -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999;
     }
 
     .header h1 {
@@ -836,15 +833,6 @@
         font-size: 1em;
     }
 
-    /* .btn button::after {
-        color: white;
-        font-size: 16px;
-        content: '\276F \276F';
-        position: relative;
-        top: -1px;
-        right: -10px;
-    } */
-
     .rec-flt-inp input {
         color: black;
         background-color: white;
@@ -896,18 +884,16 @@
     }
 
     .rec-title {
+        text-align: center;
         font-weight: bold;
-        /* text-decoration: underline; */
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
-    .rec-title::after {
-        color: steelblue;
-        font-size: 16px;
-        content: '\276F \276F';
+    .rec-arrow {
+        color: steelblue !important;
         position: relative;
-        top: -4px;
-        right: -10px;
+        position: relative;
+        left: 10px;
     }
 
     .stock-message {
