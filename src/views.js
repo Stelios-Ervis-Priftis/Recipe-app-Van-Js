@@ -8,6 +8,7 @@ const generateRecipeDom = (recipe) => {
     const recipeRoot = doc.createElement('div')
     const recipeEl = doc.createElement('a')
     const textEl = doc.createElement('p')
+    const arrowEl = doc.createElement('i')
     const heartEl = doc.createElement('i')
     const recPopEl = doc.createElement('p')
 
@@ -19,6 +20,7 @@ const generateRecipeDom = (recipe) => {
     recipeRoot.setAttribute('class', 'recipe')
     recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
     textEl.setAttribute('class', 'rec-title')
+    arrowEl.setAttribute('class', 'rec-arrow fas fa-angle-double-right')
     heartEl.setAttribute('class', 'far fa-heart')
     recPopEl.textContent = recipe.popularity
     
@@ -30,6 +32,7 @@ const generateRecipeDom = (recipe) => {
 
     recipeRoot.appendChild(recipeEl)
     recipeEl.appendChild(textEl)
+    textEl.appendChild(arrowEl)
     recipeEl.appendChild(ingredientsStockMessage(recipe))
     recipeRoot.appendChild(recPopEl)
     recipeRoot.appendChild(heartEl)
