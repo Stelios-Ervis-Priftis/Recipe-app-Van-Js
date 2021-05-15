@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store Your Favorite Recipes</title>
-    <link rel="stylesheet" href="./styles/index-page.css">
-    <link href="https://fonts.googleapis.com/css?family=Courier+Prime|Nova+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rel="icon" href="images/utensils-solid.svg">
-    <script src="https://kit.fontawesome.com/383954b5e8.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="header">
-        <h1 class="left-headline">Cook's Notes</h1>
-        <span>
-            <i class="fas fa-utensils"></i>
-        </span>
-        <h1 class="right-headline">Cook's Notes</h1>
-    </div>
-    <div class="container">
-        <div class="title">
-            <h1>My Recipes</h1>
-        </div>
-        <div class="rec-book">
-            <i class="fas fa-book-open"></i>
-        </div>
-        <div class="btn-act-ctr">
-            <div class="btn">
-                <button id="create-recipe">
-                    Create Your Recipe
-                    <i class="fas fa-angle-double-right"></i>
-                </button>
-            </div>
-            <div class="rec-flt-inp">
-                <input id="search-text" type="text" placeholder="Search Your Recipe Or Category">
-                <i class="fas fa-search"></i>
-            </div>
-            <div class="dropdown">
-                <select id="filter-by">
-                    <option value="byCreatedDate">Most Recently Added Recipe</option>
-                    <option value="byPopularity">Popularity</option>
-                </select>
-            </div>
-        </div>
-        <div id="recipes" class="rec-cnt"></div>
-    </div>
-    <!-- <div class="footer">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Store Your Favorite Recipes</title>
+		<link rel="stylesheet" href="./styles/index-page.css" />
+		<link href="https://fonts.googleapis.com/css?family=Courier+Prime|Nova+Mono&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+		<link rel="icon" href="images/utensils-solid.svg" />
+		<script src="https://kit.fontawesome.com/383954b5e8.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<h1 class="left-headline">Cook's Notes</h1>
+			<span>
+				<i class="fas fa-utensils"></i>
+			</span>
+			<h1 class="right-headline">Cook's Notes</h1>
+		</div>
+		<div class="container">
+			<div class="title">
+				<h1>My Recipes</h1>
+			</div>
+			<div class="rec-book">
+				<i class="fas fa-book-open"></i>
+			</div>
+			<div class="btn-act-ctr">
+				<div class="btn">
+					<button id="create-recipe">
+						Create Your Recipe
+						<i class="fas fa-angle-double-right"></i>
+					</button>
+				</div>
+				<div class="rec-flt-inp">
+					<input id="search-text" type="text" placeholder="Search Your Recipe Or Category" />
+					<i class="fas fa-search"></i>
+				</div>
+				<div class="dropdown">
+					<select id="filter-by">
+						<option value="byCreatedDate">Most Recently Added Recipe</option>
+						<option value="byPopularity">Popularity</option>
+					</select>
+				</div>
+			</div>
+			<div id="recipes" class="rec-cnt"></div>
+		</div>
+		<!-- <div class="footer">
         <p>Created by Dev-Chronicle</p>
         <p>Stelios Priftis</p>
     </div> -->
-    <script src="dist/index-bundle.js"></script>
-</body>
+		<script src="dist/index-bundle.js"></script>
+	</body>
 </html>
